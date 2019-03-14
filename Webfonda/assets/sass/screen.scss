@@ -1,0 +1,993 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+/*FUENTES*/
+@font-face {
+	font-family: "Futura Std Book";
+	src: url("../fonts/FuturaStd-Book.ttf");
+	src: url("../fonts/FuturaStd-Book.woff2") format("woff2"),
+		 url("../fonts/FuturaStd-Book.woff") format("woff"),
+		 url("../fonts/FuturaStd-Book.svg#filename") format("svg");
+}
+@font-face {
+	font-family: "Futura Std Heavy";
+	src: url("../fonts/FuturaStd-HeavyOblique.ttf");
+	src: url("../fonts/FuturaStd-HeavyOblique.woff2") format("woff2"),
+		 url("../fonts/FuturaStd-HeavyOblique.woff") format("woff"),
+		 url("../fonts/FuturaStd-HeavyOblique.svg#filename") format("svg");
+}
+/**/
+
+/*COLORES*/
+$negro: #000;
+$blanco: #FFF;
+$volantin: #E25E50;
+$digala: #F0C700;
+/**/
+
+/*GENÉRICOS*/
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+}
+*:focus {
+	border: none !important;
+	outline: none !important;
+}
+body,
+html {
+	width: 100%;
+	height: 100%;
+	background: $blanco;
+	overflow: hidden;
+	font-family: "Futura Std Book";
+	color: $negro;
+}
+h1,
+h2 {
+	font-family: "Futura Std Heavy";
+}
+h1 {
+	text-align: center;
+	font-size: 40px;
+}
+p {
+	line-height: 20px;
+	font-family: "Futura Std Book";
+	font-size: 18px;
+}
+ul,
+li {
+	list-style: none;
+}
+a:hover,
+a:focus {
+	text-decoration: none;
+	cursor: pointer;
+}
+img {
+	width: 100%;
+	vertical-align: top;
+}
+textarea {
+	resize: none;
+}
+main {
+	width: 100%;
+	.contenedor {
+		width: 100%;
+		height: calc(100% - 450px);
+		position: absolute;
+		bottom: 200px;
+		overflow: hidden;
+	}
+}
+.borde-arriba {
+	width: 100%;
+	height: 10px;
+	background: url('../svg/bg-borde-arriba.svg') no-repeat;
+	background-position: center top;
+	background-size: 100%;
+	position: absolute;
+	top: 20px;
+	z-index: 50;
+}
+.borde-derecha {
+	width: 10px;
+	background: #E72762;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	bottom: 20px;
+	z-index: 50;
+}
+.borde-abajo {
+	width: 100%;
+	height: 10px;
+	background: url('../svg/bg-borde-abajo.svg') no-repeat;
+	background-position: center bottom;
+	background-size: 100%;
+	position: absolute;
+	bottom: 20px;
+	z-index: 50;
+}
+.borde-izquierda {
+	width: 10px;
+	background: #FECf07;
+	position: absolute;
+	top: 20px;
+	bottom: 20px;
+	left: 20px;
+	z-index: 50;
+}
+.icono-izq {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	margin-right: 10px;
+	background: url('../svg/icono-lista-izq.svg') no-repeat;
+	background-position: center;
+	line-height: 36px;
+}
+.icono-der {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	margin-left: 10px;
+	background: url('../svg/icono-lista-der.svg') no-repeat;
+	background-position: center;
+	line-height: 36px;
+}
+.modal-backdrop,
+.modal-backdrop.fade.in {
+	background: $negro;
+	opacity: .7;
+	z-index: 999;
+}
+/**/
+
+/*HEADER*/
+header {
+	width: 100%;
+	min-height: 100px;
+	background: url('../svg/bg-top.svg') no-repeat;
+	background-position: right -10px;
+	background-size: contain;
+	position: relative;
+	z-index: 100;
+	.logo {
+		width: 200px;
+		display: inline-block;
+		margin-top: 40px;
+		margin-left: 40px;
+	}
+}
+/**/
+
+/*MODAL*/
+.modal {
+	.modal-content {
+		.modal-header {
+			width: 100%;
+			min-height: 100px;
+			padding: 20px;
+			background: url('../svg/bg-top-modal.svg') no-repeat;
+			background-position: center -10px;
+			background-size: contain;
+			border: 0;
+			top: 0;
+		}
+		.modal-body {
+			display: flex;
+			flex-flow: column wrap;
+			justify-content: center;
+			background: $blanco url('../svg/bg-modal.svg') no-repeat;
+			background-position: center bottom;
+			background-size: cover;
+			.logo-modal {
+				width: 300px;
+				align-self: center;
+			}
+			.corona-modal {
+				width: 150px;
+				align-self: center;
+				margin: 100px 0;
+			}
+			.texto-nominacion,
+			.texto-votacion {
+				align-self: center;
+				margin-bottom: 40px;
+				text-align: center;
+				p {
+					line-height: 40px;
+					font-family: "Futura Std Heavy";
+					font-size: 40px;
+				}
+			}
+			h1 {
+				align-self: center;
+				margin: 50px;
+			}
+			form {
+				display: flex;
+				flex-flow: column wrap;
+				justify-content: center;
+				padding: 20px;
+				input,
+				input:focus,
+				textarea {
+					width: 100%;
+					display: block;
+					margin-bottom: 20px;
+					padding: 10px 20px;
+					background: #F8F8F8;
+					border: 3px solid #C3C5C5 !important;
+					font-family: "Futura Std Heavy";
+					letter-spacing: 1px;
+					color: $negro;
+				}
+				::-webkit-input-placeholder {
+					color: $negro;
+				}
+				textarea {
+					height: 150px;
+				}
+				.btn-enviar-desafio {
+					width: 175px;
+					height: 50px;
+					align-self: center;
+					background: url('../svg/boton-enviar-desafio.svg') no-repeat;
+					background-position: center;
+					background-size: cover;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+	.borde-arriba {
+		height: 5px;
+		top: 10px;
+		z-index: 10;
+	}
+	.borde-derecha {
+		width: 5px;
+		top: 10px;
+		right: 10px;
+		bottom: 10px;
+	}
+	.borde-abajo {
+		height: 5px;
+		bottom: 10px;
+	}
+	.borde-izquierda {
+		width: 5px;
+		top: 10px;
+		bottom: 10px;
+		left: 10px;
+	}
+}
+/**/
+
+/*INICIO*/
+.logo-home {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: 20px;
+	img {
+		width: auto;
+		max-width: 500px;
+		align-self: center;
+	}
+}
+.contenedor-reyes {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	right: 20px;
+	img {
+		width: auto;
+		max-width: 500px;
+		align-self: center;
+	}
+	p {
+		width: 50%;
+		height: auto;
+		align-self: center;
+		padding-top: 100px;
+		background: url('../svg/bg-borde-texto.svg') no-repeat;
+		background-position: center top;
+		text-align: center;
+	}
+}
+/**/
+
+/*INFOGRAFÍA*/
+.contenedor-infografia {
+	width: 100%;
+	height: calc(100% - 200px);
+	position: absolute;
+	overflow: hidden;
+	.infografia {
+		height: 100%;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		bottom: 200px;
+		left: 20px;
+	}
+}
+/**/
+
+/*NOMINAR*/
+.contenedor-nominar {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 20px;
+	left: 20px;
+	h1 {
+		width: 100%;
+		display: block;
+		align-self: center;
+		margin-bottom: 100px;
+	}
+	.contenedor-instrucciones {
+		width: 50%;
+		height: 100%;
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: space-around;
+		position: absolute;
+		top: 0;
+		left: 20px;
+		.instruccion {
+			width: 100%;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: flex-start;
+			.texto-instruccion {
+				width: 100%;
+				display: inline-flex;
+				margin-bottom: 40px;
+				.icono-izq {
+					width: 20px;
+					height: 20px;
+					line-height: 25px;
+				}
+			}
+			.contenedor-botones-nominar {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-around;
+				.btn-examinar {
+					width: 175px;
+					height: 50px;
+					background: url('../svg/boton-examinar.svg') no-repeat;
+					background-position: center;
+				}
+				.btn-subir {
+					width: 175px;
+					height: 50px;
+					background: url('../svg/boton-subir.svg') no-repeat;
+					background-position: center;
+				}
+				.btn-enviar {
+					width: 175px;
+					height: 50px;
+					background: url('../svg/boton-enviar.svg') no-repeat;
+					background-position: center;
+				}
+			}
+			textarea {
+				width: 100%;
+				display: block;
+				margin-bottom: 40px;
+				background: url('../svg/bg-borde-textarea.svg') no-repeat;
+				background-position: center bottom;
+				letter-spacing: 1px;
+			}
+		}
+	}
+}
+/**/
+
+/*VOTAR*/
+.contenedor-votar {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 20px;
+	left: 20px;
+	h1 {
+		width: 100%;
+		display: block;
+		align-self: center;
+		margin-bottom: 100px;
+	}
+	.contenedor-participantes {
+		height: 90%;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		position: absolute;
+		bottom: 0;
+		right: 20px;
+		left: 20px;
+		overflow-y: scroll;
+		.participante {
+			width: 16%;
+			display: flex;
+			flex-flow: column wrap;
+			justify-content: center;
+			margin: 20px 0;
+			padding: 20px;
+			overflow: hidden;
+			.nombre {
+				width: 100%;
+				height: 40px;
+				display: flex;
+				flex-flow: column wrap;
+				justify-content: center;
+				background: #92101D;
+				text-align: center;
+				font-family: "Futura Std Heavy";
+				font-size: 24px;
+				color: $blanco;
+			}
+			input[type=radio].btn-votar {
+				width: 50px;
+				height: 50px;
+				align-self: center;
+				margin: 10px 0;
+				background: url('../svg/boton-like.svg') no-repeat;
+				background-position: center;
+				background-size: cover;
+			}
+			input[type=radio].btn-votar:checked {
+				background: url('../svg/boton-voto.svg') no-repeat;
+				background-position: center;
+				background-size: cover;
+			}
+
+		}
+		.participante:nth-child(1),
+		.participante:nth-child(7),
+		.participante:nth-child(13), {
+			background: url('../svg/bg-participante-01.svg') no-repeat;
+			background-size: cover;
+		}
+		.participante:nth-child(2),
+		.participante:nth-child(8),
+		.participante:nth-child(14), {
+			background: url('../svg/bg-participante-02.svg') no-repeat;
+			background-size: cover;
+		}
+		.participante:nth-child(3),
+		.participante:nth-child(9),
+		.participante:nth-child(15), {
+			background: url('../svg/bg-participante-03.svg') no-repeat;
+			background-size: cover;
+		}
+		.participante:nth-child(4),
+		.participante:nth-child(10),
+		.participante:nth-child(16), {
+			background: url('../svg/bg-participante-04.svg') no-repeat;
+			background-size: cover;
+		}
+		.participante:nth-child(5),
+		.participante:nth-child(11),
+		.participante:nth-child(17), {
+			background: url('../svg/bg-participante-05.svg') no-repeat;
+			background-size: cover;
+		}
+		.participante:nth-child(6),
+		.participante:nth-child(12),
+		.participante:nth-child(18), {
+			background: url('../svg/bg-participante-06.svg') no-repeat;
+			background-size: cover;
+		}
+	}
+}
+/**/
+
+/*DESAFIAR*/
+.contenedor-desafiar {
+	height: 100%;
+	background: $blanco url('../svg/bg-desafiar.svg') no-repeat;
+	background-position: center;
+	background-size: contain;
+	position: absolute;
+	top: 0;
+	right: 20px;
+	left: 20px;
+}
+/**/
+
+/*FOOTER*/
+footer {
+	width: 100%;
+	padding: 0 40px;
+	background: $negro;
+	position: fixed;
+	bottom: 0;
+	z-index: 30;
+	color: $blanco;
+}
+.contenedor-footer-izq {
+	width: 100%;
+	height: 200px;
+	display: inline-flex;
+	.contenedor-volantin,
+	.contenedor-digala {
+		width: 50%;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		color: $blanco;
+		img {
+			width: 50px;
+			height: 50px;
+			align-self: center;
+			margin-right: 15px;
+		}
+		ul {
+			align-self: center;
+			li {
+				h2 {
+					font-size: 26px;
+				}	
+			}
+		}
+	}
+	.contenedor-volantin:hover {
+		color: $volantin;
+	}
+	.contenedor-digala:hover {
+		color: $digala;
+	}
+}
+.contenedor-footer-der {
+	width: 100%;
+	height: 200px;
+	display: inline-flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	.btn-nominar {
+		width: 175px;
+		height: 50px;
+		align-self: center;
+		background: url('../svg/boton-nominar.svg') no-repeat;
+		background-position: center;
+	}
+	.btn-votar {
+		width: 175px;
+		height: 50px;
+		align-self: center;
+		background: url('../svg/boton-votar.svg') no-repeat;
+		background-position: center;
+	}
+}
+.contenedor-volver {
+	width: 100%;
+	height: 200px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	.btn-volver {
+		width: 175px;
+		height: 50px;
+		align-self: center;
+		background: url('../svg/boton-volver.svg') no-repeat;
+		background-position: center;
+	}
+}
+/**/
+
+@media screen and (max-width:1920px) {
+	main {
+		.contenedor {
+			height: calc(100% - 400px);
+		}
+	}
+	.contenedor-footer-izq {
+		.contenedor-volantin,
+		.contenedor-digala {
+			ul {
+				li {
+					h2 {
+						font-size: 24px;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width:1680px) {
+	header {
+		.logo {
+			width: 150px;
+		}
+	}
+}
+@media screen and (max-width:1600px) {
+	h1 {
+		font-size: 30px;
+	}
+	p {
+		font-size: 16px;
+	}
+	main {
+		.contenedor {
+			height: calc(100% - 350px);
+			bottom: 150px;
+		}
+	}
+	.modal {
+		.modal-content {
+			.modal-body {
+				.logo-modal {
+					width: 150px;
+				}
+				.corona-modal {
+					width: 100px;
+					margin: 40px 0;
+				}
+				.texto-nominacion {
+					p {
+						font-size: 30px;
+					}
+				}
+			}
+		}
+	}
+	.logo-home,
+	.contenedor-reyes {
+		img {
+			max-width: 350px;
+		}
+	}
+	.contenedor-nominar {
+		.contenedor-instrucciones {
+			.instruccion {
+				.contenedor-botones-nominar {
+					.btn-examinar,
+					.btn-subir,
+					.btn-enviar {
+						width: 150px;
+						height: 30px;
+					}
+				}
+			}
+		}
+	}
+	.contenedor-footer-izq,
+	.contenedor-footer-der {
+		height: 150px;
+	}
+	.contenedor-footer-izq {
+		.contenedor-volantin,
+		.contenedor-digala {
+			img {
+				width: 30px;
+				height: 30px;
+				margin-right: 10px;
+			}
+			ul {
+				li {
+					h2 {
+						font-size: 20px;
+					}
+					p {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+	.contenedor-footer-der {
+		.btn-nominar,
+		.btn-votar {
+			width: 150px;
+			height: 30px;
+		}
+	}
+	.contenedor-volver {
+		height: 150px;
+		.btn-volver {
+			width: 150px;
+			height: 30px;
+		}
+	}
+}
+@media screen and (max-width:1440px) {
+	.contenedor-votar {
+		.contenedor-participantes {
+			.participante {
+				padding: 10px;
+				.nombre {
+					font-size: 14px;
+				}
+				input[type=radio].btn-votar {
+					width: 30px;
+					height: 30px;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width:1366px) {
+	header {
+		.logo {
+			width: 100px;
+		}
+	}
+}
+@media screen and (max-width:1280px) {
+	.logo-home,
+	.contenedor-reyes {
+		img {
+			max-width: 300px;
+		}
+	}
+	.contenedor-reyes {
+		p {
+			padding-top: 40px;
+		}
+	}
+	.contenedor-votar {
+		.contenedor-participantes {
+			.participante {
+				width: 33.3%;
+			}
+		}
+	}
+	.contenedor-footer-izq {
+		.contenedor-volantin,
+		.contenedor-digala {
+			img {
+				width: 20px;
+				height: 20px;
+				margin-right: 5px;
+			}
+			ul {
+				li {
+					h2 {
+						font-size: 12px;
+					}
+					p {
+						font-size: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width:991px) {
+	.borde-arriba,
+	.borde-derecha,
+	.borde-abajo,
+	.borde-izquierda {
+		display: none;
+	}
+	.contenedor-nominar {
+		.contenedor-instrucciones {
+			.instruccion {
+				.contenedor-botones-nominar {
+					width: 100%;
+					.btn-examinar,
+					.btn-subir,
+					.btn-enviar {
+						width: 100px;
+					}
+				}
+			}
+		}
+	}
+	.contenedor-footer-izq,
+	.contenedor-footer-der {
+		height: auto;
+		padding: 20px 0;
+	}
+	.contenedor-footer-izq {
+		.contenedor-volantin,
+		.contenedor-digala {
+			width: 100%;
+			flex-flow: column wrap;
+			justify-content: flex-start;
+			img {
+				width: 30px;
+				height: 30px;
+				margin-right: 0;
+				margin-bottom: 20px;
+			}
+			ul {
+				li {
+					text-align: center;
+					h2 {
+						font-size: 12px;
+					}
+					p {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+	.contenedor-footer-der {
+		.btn-nominar,
+		.btn-votar {
+			width: 100px;
+		}
+	}
+	.contenedor-volver {
+		height: auto;
+		justify-content: center;
+		padding: 10px 0;
+		.btn-volver {
+			width: 100px;
+		}
+	}
+}
+@media screen and (min-width:320px) and (max-width:767px) {
+	h1 {
+		font-size: 22px;
+	}
+	p {
+		font-size: 12px;
+	}
+	body {
+		overflow: auto;
+	}
+	.icono-izq {
+		width: 15px;
+		height: 15px;
+		margin-right: 5px;
+		line-height: 20px;
+	}
+	.icono-der {
+		width: 15px;
+		height: 15px;
+		margin-left: 5px;
+		line-height: 20px;
+	}
+	header {
+		min-height: 50px;
+		background-position: right -5px;
+		.logo {
+			margin-top: 20px;
+			margin-left: 20px;
+		}
+	}
+	main {
+		.contenedor {
+			height: 100%;
+			position: relative;
+			bottom: 0;
+		}
+	}
+	.logo-home {
+		width: 100%;
+		margin: 20px 0;
+		position: inherit;
+		left: inherit;
+		img {
+			max-width: 100px;
+		}
+	}
+	.contenedor-reyes {
+		width: 100%;
+		position: relative;
+		right: inherit;
+		img {
+			max-width: 200px;
+			margin-bottom: 20px;
+		}
+		p {
+			width: 100%;
+			padding: 40px 0;
+		}
+	}
+	.contenedor-nominar {
+		position: relative;
+		right: 0;
+		left: 0;
+		h1 {
+			margin-bottom: 20px;
+		}
+		.contenedor-instrucciones {
+			width: 100%;
+			padding: 20px;
+			position: relative;
+			left: 0;
+			span,
+			p {
+				display: inline;
+			}
+			.instruccion {
+				.texto-instruccion {
+					margin-bottom: 20px;
+				}
+				textarea {
+					margin-bottom: 20px;
+				}
+			}
+			.instruccion:nth-child(2) {
+				margin-top: 20px;
+			}
+		}
+	}
+	.modal {
+		.modal-content {
+			.modal-header {
+				min-height: 50px;
+			}
+			.modal-body {
+				.logo-modal {
+					width: 100px;
+				}
+				h1 {
+					margin: 20px;
+					font-size: 20px;
+				}
+				.corona-modal {
+					width: 50px;
+					margin: 20px;
+				}
+				.texto-nominacion {
+					p {
+						line-height: 30px;
+						font-size: 20px;
+					}
+				}
+				form {
+					textarea {
+						height: 100px;
+					}
+				}
+			}
+		}
+	}
+	.contenedor-votar {
+		position: relative;
+		right: 0;
+		left: 0;
+		.contenedor-participantes {
+			height: 95%;
+			padding: 20px;
+			position: relative;
+			right: 0;
+			left: 0;
+			.participante {
+				width: 100%;
+			}
+		}
+	}
+	.contenedor-desafiar {
+		position: relative;
+		right: 0;
+		left: 0;
+	}
+	footer {
+		padding: 20px;
+		position: relative;
+	}
+	.footer-fijo {
+		position: fixed;
+	}
+}

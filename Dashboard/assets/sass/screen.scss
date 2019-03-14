@@ -1,0 +1,1073 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+/*FUENTES*/
+@font-face {
+	font-family: "Futura Std Heavy";
+	src: url("../fonts/FuturaStd-HeavyOblique.ttf");
+	src: url("../fonts/FuturaStd-HeavyOblique.woff2") format("woff2"),
+		 url("../fonts/FuturaStd-HeavyOblique.woff") format("woff"),
+		 url("../fonts/FuturaStd-HeavyOblique.svg#filename") format("svg");
+}
+@font-face {
+	font-family: "Glyphicons Halflings";
+	src: url("../fonts/glyphicons-halflings-regular.ttf");
+	src: url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"),
+		 url("../fonts/glyphicons-halflings-regular.woff") format("woff"),
+		 url("../fonts/glyphicons-halflings-regular.svg#filename") format("svg");
+}
+/**/
+
+/*COLORES*/
+$negro: #000;
+$blanco: #FFF;
+$gris: #474747;
+$adn-relleno: #CF092C;
+$kpi-relleno: #F5C908;
+$clima-relleno: #682466;
+$ed-relleno: #E73D51;
+/**/
+
+/*GENÉRICOS*/
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	-webkit-appearance: none;
+}
+*:focus {
+	border: none !important;
+	outline: none !important;
+	box-shadow: none !important;
+}
+html,
+body {
+	width: 100%;
+	height: 100%;
+	background: $blanco;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	color: $negro;
+}
+ul,
+li {
+	list-style: none;
+}
+a {
+	transition: .3s ease-in-out;
+}
+a:hover,
+a:focus {
+	text-decoration: none;
+	cursor: pointer;
+	transition: .3s ease-in;
+}
+textarea {
+	resize: none;
+}
+button {
+	cursor: pointer;
+}
+img {
+	width: 100%;
+	vertical-align: top;
+}
+.franja-full-blanco {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	padding: 100px 0;
+}
+table {
+	width: 100%;
+	font-family: Tahoma, sans-serif;
+	thead {
+		width: 100%;
+		display: inline-table;
+		tr {
+			width: 100%;
+		}
+	}
+	tbody {
+	width: 100%;
+	display: inline-table;
+		tr {
+			width: 100%;
+		}
+	}
+}
+/**/
+
+/*HEADER*/
+header {
+	width: 100%;
+	background: $negro;
+	.logo {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		margin-right: 20px;
+		img {
+			width: 30px;
+		}
+	}
+	.input-group {
+		.btn {
+			background: $blanco url('../svg/icono-lupa.svg') center no-repeat;
+			background-size: 15px 15px;
+			border: 0;
+			border-top-right-radius: 0;
+			border-top-left-radius: 15px;
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 15px;
+		}
+		.dropdown-menu {
+			width: 100%;
+			min-width: 490px !important;
+			padding: 30px;
+			border-radius: 0;
+			.form-group {
+				width: 100%;
+				display: inline-flex;
+				flex-flow: row wrap;
+				justify-content: space-between;
+				align-items: center;
+				margin: 15px 0;
+				label {
+					width: 40%;
+					font-size: 12px;
+				}
+				.form-control {
+					border: 1px solid #C8C8C8 !important;
+					border-radius: 0;
+					font-size: 12px;
+				}
+				select.form-control:not([size]):not([multiple]) {
+					height: inherit;
+					padding: 0 10px;
+				}
+			}
+		}
+		input {
+			width: 100%;
+			border: none;
+			border-top-right-radius: 15px;
+			border-bottom-right-radius: 15px;
+			color: $negro;
+		}
+		::-webkit-input-placeholder {
+			color: $negro;
+		}
+		.dropdown-toggle:after {
+			display: none;
+		}
+	}
+	.logged {
+		width: 100%;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: center;
+		color: $blanco;
+		span {
+			display: inline-flex;
+		}
+		img {
+			width: 30px;
+			height: 30px;
+			display: inline-flex;
+			border-radius: 50%;
+		}
+		.dropdown {
+			width: 15px;
+			height: 15px;
+			background: $negro url('../images/bg-boton-usuario.png') center no-repeat;
+			background-size: contain;
+			button {
+				width: 15px;
+				height: 15px;
+				background: transparent;
+			}
+			.dropdown-menu {
+				width: 300px;
+				margin-top: 15px;
+				padding: 0;
+				.perfil {
+					display: flex;
+					flex-flow: row wrap;
+					justify-content: flex-start;
+					align-items: center;
+					padding: 10px 15px;
+					background: #E5E5E5;
+					.foto {
+						margin-right: 30px;
+						border-radius: 50%;
+						img {
+							width: 70px;
+							height: 70px;
+						}
+					}
+				}
+				.cuenta {
+					display: block;
+					padding: 10px 15px;
+				}
+				ul {
+					background: #E5E5E5;
+					li {
+						padding: 10px 30px;
+						a {
+							font-size: 12px;
+							color: $negro;
+						}
+						a:hover {
+							color: #F5C908;
+						}
+					}
+					li.cerrar-sesion {
+						display: none;
+					}
+				}
+			}
+		}
+		a {
+			color: $blanco;
+		}
+		a:hover {
+			color: #F5C908;
+		}
+	}
+	.borde-header {
+		width: 100%;
+		height: 50px;
+		display: block;
+		background: $negro url('../images/borde-header.png') no-repeat;
+		background-position: center top;
+		background-size: cover;
+	}
+}
+/**/
+
+/*USUARIO*/
+.contenedor-usuario {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	padding-top: 100px;
+	padding-bottom: 50px;
+	background: #F0F0F0 url('../images/bg-contenedor-usuario.png') no-repeat;
+	background-position: center top;
+	background-size: contain;
+	text-align: center;
+	.usuario {
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: space-around;
+		align-items: center;
+		.foto-usuario {
+			width: 130px;
+			height: 130px;
+			margin-bottom: 15px;
+			background: #E33D6D;
+		}
+		span {
+			margin: 10px 0;
+		}
+		.nombre {
+			font-size: 24px;
+		}
+		.puesto {
+			font-size: 16px;
+		}
+		.jefatura {
+			font-size: 12px;
+		}
+		a {
+			display: inline-flex;
+			padding: 20px 100px;
+			background: #E6275E;
+			font-size: 16px;
+			color: $blanco;
+		}
+		a:hover {
+			background: #C8C8C8;
+			color: #E6275E;
+		}
+	}
+}
+.panel {
+	.panel-heading {
+		padding: 15px 10px;
+		border: 1px solid #C8C8C8;
+		h2 {
+			a {
+				font-size: 16px;
+				color: $negro;
+			}
+		}
+		.accordion-toggle:after {
+			float: right;
+			content: "\e079";
+			font-family: 'Glyphicons Halflings';
+		}
+	}
+	.panel-body {
+		padding: 15px 10px;
+		ul {
+			li {
+				line-height: 30px;
+			}
+		}
+	}
+}
+.panel:nth-child(2) {
+	margin: 15px 0;
+}
+/**/
+
+/*PORCENTAJES*/
+.franja-full-gris {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	padding: 100px 0;
+	background: $gris;
+}
+.contenedor-porcentaje {
+	h2 {
+		margin-bottom: 25px;
+		text-align: center;
+		font-size: 16px;
+		font-weight: bold;
+		color: $blanco;
+	}
+}
+$configs: (
+	chart-one: (
+		svgSize: 150px,
+		percentage: 55,
+		backgroundColor: rgba(207, 9, 44, .5),
+		foregroundColor: $adn-relleno,
+		strokeWidth: 10px,
+		labelFontSize: 42px,
+		labelColor: $blanco,
+		duration: 3s,
+		animationDelay: 1s
+	),
+	chart-two: (
+		svgSize: 150px,
+		percentage: 80,
+		backgroundColor: rgba(245, 201, 8, .5),
+		foregroundColor: $kpi-relleno,
+		strokeWidth: 10px,
+		labelFontSize: 42px,
+		labelColor: $blanco,
+		duration: 3s,
+		animationDelay: 1s
+	),
+	chart-three: (
+		svgSize: 150px,
+		percentage: 70,
+		backgroundColor: rgba(104, 36, 102, .5),
+		foregroundColor: $clima-relleno,
+		strokeWidth: 10px,
+		labelFontSize: 42px,
+		labelColor: $blanco,
+		duration: 3s,
+		animationDelay: 1s
+	),
+	chart-four: (
+		svgSize: 150px,
+		percentage: 60,
+		backgroundColor: rgba(231, 61, 81, .5),
+		strokeWidth: 10px,
+		foregroundColor: $ed-relleno,
+		labelFontSize: 42px,
+		labelColor: $blanco,
+		duration: 3s,
+		animationDelay: 1s
+	)
+);
+$pi: 3.14;
+$labelData: '';
+@for $i from 0 to 101 {
+	$labelData: $labelData + $i + '%' + '\a';
+}
+@each $chart, $param in $configs {
+	$c: (map-get($param, svgSize) - map-get($param, strokeWidth)) * $pi;
+	$cOffSet: (map-get($param, percentage)/100)*$c;
+	.#{$chart} {
+		width: map-get($param, svgSize);
+		height: map-get($param, svgSize);
+		margin: 0;
+		position: relative;
+		&.animate {
+			svg .circle-foreground {
+				animation: offset map-get($param, duration) ease-in-out forwards;
+				animation-delay: map-get($param, animationDelay);
+			}
+			figcaption:after {
+				animation: #{$chart}-label map-get($param, duration) steps(map-get($param, percentage)) forwards;
+				animation-delay: map-get($param, animationDelay);
+			}
+		}
+		svg {
+			width: 100%;
+			height: 100%;
+			.circle-background {
+				r: (map-get($param, svgSize) - map-get($param, strokeWidth))/2;
+				cx: 50%;
+				cy: 50%;
+				fill: none;
+				stroke: map-get($param, backgroundColor);
+				stroke-width: map-get($param, strokeWidth);
+			}
+			.circle-foreground {
+				@extend .circle-background;
+				stroke: map-get($param, foregroundColor);
+				stroke-dasharray: $cOffSet $c;
+				stroke-dashoffset: $cOffSet;
+				stroke-linecap: round;
+				transform-origin: 50% 50%;
+				transform: rotate(-90deg);
+			}
+		}
+		figcaption {
+			width: 100%;
+			height: map-get($param, labelFontSize);
+			display: inline-block;
+			position: absolute;
+			top: calc(50% - #{map-get($param, labelFontSize)/2});
+			left: 0;
+			overflow: hidden;
+			text-align: center;
+			font-family: "Futura Std Heavy";
+			font-style: italic;
+			font-size: 0;
+			color: map-get($param, labelColor);
+			&:after {
+				display: inline-block;
+				content: $labelData;
+				line-height: map-get($param, labelFontSize);
+				font-size: map-get($param, labelFontSize);
+				white-space: pre;
+			}
+		}
+	}
+	@keyframes #{$chart}-label {
+		100% {
+			transform: translateY(map-get($param, labelFontSize) * (-(map-get($param, percentage))));
+		}
+	}
+}
+@keyframes offset {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+.chart-one,
+.chart-two,
+.chart-three,
+.chart-four {
+	&:hover {
+		cursor: pointer;
+	}
+}
+/**/
+
+/*PORCENTAJES*/
+.titulo {
+	width: 100%;
+	display: block;
+	margin-bottom: 50px;
+	padding-bottom: 10px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	font-family: Tahoma, sans-serif;
+	font-size: 24px;
+}
+.titulo:before {
+	width: 50%;
+	margin: 0 auto;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	content:"";
+}
+.descargar-informe {
+	width: 100%;
+	display: inline-block;
+	margin: 25px 0;
+	padding: 10px 0;
+	text-align: center;
+	font-size: 10px;
+	color: $blanco;
+}
+.recursos {
+	padding: 30px 15px;
+	border: 1px solid #959595;
+	line-height: 15px;
+	font-size: 10px;
+}
+.adn {
+	.titulo:before {
+		border-top: 5px solid $adn-relleno;
+	}
+	table {
+		font-size: 10px;
+		thead {
+			tr {
+				background: $blanco;
+				border: 1px solid #535353;
+				th {
+					width: 20%;
+					border: 0;
+					text-align: center;
+				}
+				th:nth-child(1) {
+					text-align: left;
+				}
+			}
+		}
+		tbody {
+			tr {
+				th {
+					width: 20%;
+					text-align: left;
+				}
+				td {
+					width: 20%;
+					text-align: center;
+				}
+			}
+		}
+	}
+	.descargar-informe {
+		background: #CF092C;
+	}
+	.descargar-informe:hover {
+		background: #C8C8C8;
+		color: #CF092C;
+	}
+}
+.kpi {
+	.titulo:before {
+		border-top: 5px solid $kpi-relleno;
+	}
+	table {
+		font-size: 10px;
+		thead {
+			tr {
+				background: #959595;
+				th {
+					width: 50%;
+					border: 0;
+					text-align: center;
+					color: $blanco;
+				}
+			}
+		}
+		tbody {
+			tr {
+				th {
+					width: 50%;
+					text-align: left;
+				}
+				td {
+					width: 50%;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+.clima {
+	.titulo:before {
+		border-top: 5px solid $clima-relleno;
+	}
+	table {
+		font-size: 10px;
+		thead {
+			tr {
+				background: $blanco;
+				border: 1px solid #959595;
+				th {
+					width: 20%;
+					border: 0;
+					text-align: center;
+				}
+			}
+			tr:nth-child(2) {
+				background: #959595;
+				border: 1px solid #959595;
+				color: $blanco;
+			}
+		}
+		tbody {
+			tr {
+				th {
+					width: 20%;
+					text-align: left;
+				}
+				td {
+					width: 20%;
+					text-align: center;
+				}
+			}
+		}
+	}
+	.descargar-informe {
+		background: #682466;
+	}
+	.descargar-informe:hover {
+		background: #C8C8C8;
+		color: #682466;
+	}
+}
+.ed {
+	.titulo:before {
+		border-top: 5px solid $ed-relleno;
+	}
+	table {
+		font-size: 10px;
+		thead {
+			tr {
+				background: #959595;
+				th {
+					width: 50%;
+					border: 0;
+					text-align: center;
+					color: $blanco;
+				}
+			}
+		}
+		tbody {
+			tr {
+				th {
+					width: 50%;
+					text-align: left;
+				}
+				td {
+					width: 50%;
+					text-align: center;
+				}
+			}
+		}
+	}
+	table:nth-child(2) {
+		thead {
+			tr {
+				th {
+					width: 25%;
+				}
+			}
+		}
+		tbody {
+			tr {
+				th {
+					width: 25%;
+				}
+				td {
+					width: 25%;
+				}
+			}
+		}
+	}
+	.descargar-informe {
+		background: $ed-relleno;
+	}
+}
+/**/
+
+/*INFORMACIÓN DE TALENTO*/
+.franja-full-amarillo {
+	padding: 30px 0;
+	background: #F5C908;
+	text-align: center;
+	h1 {
+		font-size: 20px;
+	}
+}
+.franja-informacion-talento {
+	padding: 50px 0;
+	background: url('../images/bg-informacion-talento.png') no-repeat;
+	background-position: center;
+	background-size: cover;
+	.contenedor-circulos {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-end;
+		margin-bottom: 15px;
+		.circulo-cargo {
+			width: 30px;
+			height: 30px;
+			display: inline-flex;
+			background: $blanco;
+			border-radius: 50%;
+		}
+		.circulo-cargo:nth-child(1) {
+			background: #CF092C;
+		}
+		.circulo-cargo:nth-child(2) {
+			margin: 0 5px;
+			background: #F5C908;
+		}
+		.circulo-cargo:nth-child(3) {
+			background: #00FF3C;
+		}
+	}
+	table {
+		border: 1px solid $blanco;
+		tbody {
+			tr {
+				th {
+					width: 50%;
+					padding: 10px 5px;
+					border: none;
+					color: $blanco;
+				}
+				td {
+					width: 50%;
+					padding: 10px 0;
+					border: none;
+					text-align: center;
+					color: $blanco;
+				}
+			}
+			tr:nth-child(2) {
+				background: rgba(255, 255, 255, .3);
+			}
+		}
+	}
+	table.potencial-sucesor {
+		border: 1px solid $blanco;
+		thead {
+			tr {
+				th {
+					width: 33.3%;
+					border: none;
+					padding: 10px 0;
+					text-align: center;
+					font-size: 16px;
+					color: $blanco;
+				}
+			}
+			tr:nth-child(1) {
+				background: $blanco;
+				text-align: center;
+				th {
+					color: #682466;
+				}
+			}
+		}
+		tbody {
+			tr {
+				td {
+					width: 33.3%;
+					padding: 10px 0;
+					border: none;
+					color: $blanco;
+				}
+			}
+			tr:nth-child(even) {
+				background: transparent;
+			}
+			tr:nth-child(odd) {
+				background: rgba(255, 255, 255, .3);
+			}
+		}
+	}
+	h2 {
+		margin-bottom: 15px;
+		font-size: 14px;
+		color: $blanco;
+	}
+	.circulo {
+		width: 20px;
+		height: 20px;
+		display: block;
+		margin: 0 auto;
+		background: #F5C908;
+		border-radius: 50%;
+	}
+	canvas {
+		width: 100% !important;
+		height: auto !important;
+	}
+}
+/**/
+
+/*MI EQUIPO*/
+.franja-full-rosado {
+	padding: 30px 0;
+	background: #E73D51;
+	text-align: center;
+	h1 {
+		font-size: 20px;
+		color: $blanco;
+	}
+}
+.mi-equipo {
+	table {
+		thead {
+			tr {
+				background: $blanco;
+				border: 1px solid #CFCFCF;
+				th {
+					width: 20%;
+					border: 0;
+					padding: 10px 0;
+					text-align: center;
+					font-size: 16px;
+				}
+				th:nth-child(1),
+				th:nth-child(2) {
+					text-align: left;
+				}
+				th:nth-child(1) {
+					img {
+						width: 50px;
+						height: 50px;
+					}
+				}
+			}
+		}
+		tbody {
+			tr {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-between;
+				background: $blanco !important;
+				td {
+					width: 20%;
+					display: flex;
+					flex-flow: column wrap;
+					justify-content: center;
+					align-items: center;
+					padding: 10px 0;
+					a {
+						color: #0062A0;
+					}
+					a:hover {
+						color: #E73D51;
+					}
+					.cargo {
+						display: block;
+						font-size: 10px;
+					}
+				}
+				td:nth-child(1) {
+					img {
+						width: 50px;
+						height: 50px;
+					}
+				}
+				td:nth-child(1),
+				td:nth-child(2) {
+					align-items: flex-start;
+				}
+			}
+			tr:hover {
+				cursor: pointer;
+			}
+		}
+	}
+}
+td.hiddenRow {
+	width: 100% !important;
+	.accordion-body {
+		width: 100%;
+		td {
+			border: none;
+			font-size: 12px;
+		}
+	}
+	.descargar-informe-equipo {
+		width: 85%;
+		display: inline-block;
+		padding: 10px 0;
+		background: #C8C8C8;
+		text-align: center;
+		font-size: 12px;
+		color: $negro;
+	}
+	.descargar-informe-equipo:hover {
+		background: #E73D51;
+		color: $blanco;
+	}
+}
+.modal-header {
+	justify-content: flex-end;
+	border: 0;
+}
+.modal-body.reporte {
+	height: 100%;
+	table {
+		font-size: 14px;
+		thead {
+			tr {
+				background: #BFBFBF;
+				th {
+					width: 33.3%;
+					padding: 10px 0;
+					border: 0;
+					text-align: center;
+					font-size: 14px;
+					color: $blanco;
+				}
+			}
+		}
+		tbody {
+			tr {
+				th {
+					width: 33.3%;
+					padding: 10px 0;
+					text-align: left;
+					.cargo {
+						display: block;
+						font-size: 10px;
+					}
+				}
+				td {
+					width: 33.3%;
+					padding: 10px 0;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+.modal-body.antecedentes {
+	height: 100%;
+	table {
+		font-size: 10px;
+		thead {
+			tr {
+				background: #BFBFBF;
+				th {
+					width: 100%;
+					padding: 10px 0;
+					border: 0;
+					text-align: center;
+					font-size: 14px;
+					color: $blanco;
+				}
+			}
+		}
+		tbody {
+			tr {
+				th {
+					width: 30%;
+					padding: 10px 0;
+					text-align: left;
+				}
+				td {
+					width: 70%;
+					padding: 10px 0;
+					text-align: center;
+					canvas {
+						width: 300px !important;
+						height: auto !important;
+					}
+					.potencial,
+					.talento {
+						display: block;
+						margin-bottom: 15px;
+						text-align: left;
+						font-size: 14px;
+					}
+					.circulo {
+						width: 50px;
+						height: 50px;
+						display: inline-block;
+						background: #F5C908;
+						border-radius: 50%;
+					}
+				}
+			}
+		}
+	}
+}
+/**/
+
+/*FOOTER*/
+footer {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	padding: 50px 0;
+	background: $gris;
+	.logo {
+		img {
+			width: 50px;
+		}
+	}
+}
+/**/
+
+@media screen and (max-width:1200px) {
+	header {
+		.input-group {
+			.dropdown-menu {
+				min-width: 300px !important;
+				padding: 15px;
+			}
+		}
+	}
+}
+@media screen and (max-width:991px) {
+	header {
+		.logged {
+			span.bienvenido,
+			a.cerrar-sesion {
+				display: none;
+			}
+			.dropdown {
+				.dropdown-menu {
+					ul {
+						li.cerrar-sesion {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
+	.contenedor-usuario {
+		margin-bottom: 30px;
+	}
+	.chart-one,
+	.chart-two,
+	.chart-three,
+	.chart-four {
+		width: 130px;
+		height: 130px;
+		svg {
+			.circle-background,
+			.circle-foreground {
+				r: 50px;
+				stroke-width: 5px;
+			}
+		}
+		figcaption:after {
+			font-size: 30px;
+		}
+	}
+	.table {
+		thead,
+		tbody {
+			th {
+				vertical-align: middle;
+			}
+		}
+	}
+}

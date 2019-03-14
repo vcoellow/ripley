@@ -1,0 +1,1168 @@
+@charset "UTF-8";
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/*FUENTES*/
+@font-face {
+  font-family: "Futura Std Book";
+  src: url("../fonts/FuturaStd-Book.ttf");
+  src: url("../fonts/FuturaStd-Book.woff2") format("woff2"), url("../fonts/FuturaStd-Book.woff") format("woff"), url("../fonts/FuturaStd-Book.svg#filename") format("svg");
+}
+@font-face {
+  font-family: "Futura Std Heavy";
+  src: url("../fonts/FuturaStd-HeavyOblique.ttf");
+  src: url("../fonts/FuturaStd-HeavyOblique.woff2") format("woff2"), url("../fonts/FuturaStd-HeavyOblique.woff") format("woff"), url("../fonts/FuturaStd-HeavyOblique.svg#filename") format("svg");
+}
+/**/
+/*COLORES*/
+/**/
+/*GENÉRICOS*/
+/* line 33, ../sass/screen.scss */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+}
+
+/* line 40, ../sass/screen.scss */
+*:focus {
+  border: none !important;
+  outline: none !important;
+}
+
+/* line 44, ../sass/screen.scss */
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background: #FFF;
+  overflow: hidden;
+  font-family: "Futura Std Book";
+  color: #000;
+}
+
+/* line 53, ../sass/screen.scss */
+h1,
+h2 {
+  font-family: "Futura Std Heavy";
+}
+
+/* line 57, ../sass/screen.scss */
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+/* line 61, ../sass/screen.scss */
+p {
+  line-height: 20px;
+  font-family: "Futura Std Book";
+  font-size: 18px;
+}
+
+/* line 66, ../sass/screen.scss */
+ul,
+li {
+  list-style: none;
+}
+
+/* line 70, ../sass/screen.scss */
+a:hover,
+a:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 75, ../sass/screen.scss */
+img {
+  width: 100%;
+  vertical-align: top;
+}
+
+/* line 79, ../sass/screen.scss */
+textarea {
+  resize: none;
+}
+
+/* line 82, ../sass/screen.scss */
+main {
+  width: 100%;
+}
+/* line 84, ../sass/screen.scss */
+main .contenedor {
+  width: 100%;
+  height: calc(100% - 450px);
+  position: absolute;
+  bottom: 200px;
+  overflow: hidden;
+}
+
+/* line 92, ../sass/screen.scss */
+.borde-arriba {
+  width: 100%;
+  height: 10px;
+  background: url("../svg/bg-borde-arriba.svg") no-repeat;
+  background-position: center top;
+  background-size: 100%;
+  position: absolute;
+  top: 20px;
+  z-index: 50;
+}
+
+/* line 102, ../sass/screen.scss */
+.borde-derecha {
+  width: 10px;
+  background: #E72762;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 50;
+}
+
+/* line 111, ../sass/screen.scss */
+.borde-abajo {
+  width: 100%;
+  height: 10px;
+  background: url("../svg/bg-borde-abajo.svg") no-repeat;
+  background-position: center bottom;
+  background-size: 100%;
+  position: absolute;
+  bottom: 20px;
+  z-index: 50;
+}
+
+/* line 121, ../sass/screen.scss */
+.borde-izquierda {
+  width: 10px;
+  background: #FECf07;
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 50;
+}
+
+/* line 130, ../sass/screen.scss */
+.icono-izq {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-right: 10px;
+  background: url("../svg/icono-lista-izq.svg") no-repeat;
+  background-position: center;
+  line-height: 36px;
+}
+
+/* line 139, ../sass/screen.scss */
+.icono-der {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-left: 10px;
+  background: url("../svg/icono-lista-der.svg") no-repeat;
+  background-position: center;
+  line-height: 36px;
+}
+
+/* line 148, ../sass/screen.scss */
+.modal-backdrop,
+.modal-backdrop.fade.in {
+  background: #000;
+  opacity: .7;
+  z-index: 999;
+}
+
+/**/
+/*HEADER*/
+/* line 157, ../sass/screen.scss */
+header {
+  width: 100%;
+  min-height: 100px;
+  background: url("../svg/bg-top.svg") no-repeat;
+  background-position: right -10px;
+  background-size: contain;
+  position: relative;
+  z-index: 100;
+}
+/* line 165, ../sass/screen.scss */
+header .logo {
+  width: 200px;
+  display: inline-block;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+/**/
+/*MODAL*/
+/* line 177, ../sass/screen.scss */
+.modal .modal-content .modal-header {
+  width: 100%;
+  min-height: 100px;
+  padding: 20px;
+  background: url("../svg/bg-top-modal.svg") no-repeat;
+  background-position: center -10px;
+  background-size: contain;
+  border: 0;
+  top: 0;
+}
+/* line 187, ../sass/screen.scss */
+.modal .modal-content .modal-body {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  background: #FFF url("../svg/bg-modal.svg") no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}
+/* line 194, ../sass/screen.scss */
+.modal .modal-content .modal-body .logo-modal {
+  width: 300px;
+  align-self: center;
+}
+/* line 198, ../sass/screen.scss */
+.modal .modal-content .modal-body .corona-modal {
+  width: 150px;
+  align-self: center;
+  margin: 100px 0;
+}
+/* line 203, ../sass/screen.scss */
+.modal .modal-content .modal-body .texto-nominacion,
+.modal .modal-content .modal-body .texto-votacion {
+  align-self: center;
+  margin-bottom: 40px;
+  text-align: center;
+}
+/* line 208, ../sass/screen.scss */
+.modal .modal-content .modal-body .texto-nominacion p,
+.modal .modal-content .modal-body .texto-votacion p {
+  line-height: 40px;
+  font-family: "Futura Std Heavy";
+  font-size: 40px;
+}
+/* line 214, ../sass/screen.scss */
+.modal .modal-content .modal-body h1 {
+  align-self: center;
+  margin: 50px;
+}
+/* line 218, ../sass/screen.scss */
+.modal .modal-content .modal-body form {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  padding: 20px;
+}
+/* line 223, ../sass/screen.scss */
+.modal .modal-content .modal-body form input,
+.modal .modal-content .modal-body form input:focus,
+.modal .modal-content .modal-body form textarea {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: #F8F8F8;
+  border: 3px solid #C3C5C5 !important;
+  font-family: "Futura Std Heavy";
+  letter-spacing: 1px;
+  color: #000;
+}
+/* line 236, ../sass/screen.scss */
+.modal .modal-content .modal-body form ::-webkit-input-placeholder {
+  color: #000;
+}
+/* line 239, ../sass/screen.scss */
+.modal .modal-content .modal-body form textarea {
+  height: 150px;
+}
+/* line 242, ../sass/screen.scss */
+.modal .modal-content .modal-body form .btn-enviar-desafio {
+  width: 175px;
+  height: 50px;
+  align-self: center;
+  background: url("../svg/boton-enviar-desafio.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+}
+/* line 254, ../sass/screen.scss */
+.modal .borde-arriba {
+  height: 5px;
+  top: 10px;
+  z-index: 10;
+}
+/* line 259, ../sass/screen.scss */
+.modal .borde-derecha {
+  width: 5px;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+}
+/* line 265, ../sass/screen.scss */
+.modal .borde-abajo {
+  height: 5px;
+  bottom: 10px;
+}
+/* line 269, ../sass/screen.scss */
+.modal .borde-izquierda {
+  width: 5px;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+}
+
+/**/
+/*INICIO*/
+/* line 279, ../sass/screen.scss */
+.logo-home {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+/* line 288, ../sass/screen.scss */
+.logo-home img {
+  width: auto;
+  max-width: 500px;
+  align-self: center;
+}
+
+/* line 294, ../sass/screen.scss */
+.contenedor-reyes {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+/* line 303, ../sass/screen.scss */
+.contenedor-reyes img {
+  width: auto;
+  max-width: 500px;
+  align-self: center;
+}
+/* line 308, ../sass/screen.scss */
+.contenedor-reyes p {
+  width: 50%;
+  height: auto;
+  align-self: center;
+  padding-top: 100px;
+  background: url("../svg/bg-borde-texto.svg") no-repeat;
+  background-position: center top;
+  text-align: center;
+}
+
+/**/
+/*INFOGRAFÍA*/
+/* line 321, ../sass/screen.scss */
+.contenedor-infografia {
+  width: 100%;
+  height: calc(100% - 200px);
+  position: absolute;
+  overflow: hidden;
+}
+/* line 326, ../sass/screen.scss */
+.contenedor-infografia .infografia {
+  height: 100%;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  bottom: 200px;
+  left: 20px;
+}
+
+/**/
+/*NOMINAR*/
+/* line 338, ../sass/screen.scss */
+.contenedor-nominar {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  left: 20px;
+}
+/* line 344, ../sass/screen.scss */
+.contenedor-nominar h1 {
+  width: 100%;
+  display: block;
+  align-self: center;
+  margin-bottom: 100px;
+}
+/* line 350, ../sass/screen.scss */
+.contenedor-nominar .contenedor-instrucciones {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+/* line 359, ../sass/screen.scss */
+.contenedor-nominar .contenedor-instrucciones .instruccion {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+/* line 364, ../sass/screen.scss */
+.contenedor-nominar .contenedor-instrucciones .instruccion .texto-instruccion {
+  width: 100%;
+  display: inline-flex;
+  margin-bottom: 40px;
+}
+/* line 368, ../sass/screen.scss */
+.contenedor-nominar .contenedor-instrucciones .instruccion .texto-instruccion .icono-izq {
+  width: 20px;
+  height: 20px;
+  line-height: 25px;
+}
+/* line 374, ../sass/screen.scss */
+.contenedor-nominar .contenedor-instrucciones .instruccion .contenedor-botones-nominar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+/* line 378, ../sass/screen.scss */
+.contenedor-nominar .contenedor-instrucciones .instruccion .contenedor-botones-nominar .btn-examinar {
+  width: 175px;
+  height: 50px;
+  background: url("../svg/boton-examinar.svg") no-repeat;
+  background-position: center;
+}
+/* line 384, ../sass/screen.scss */
+.contenedor-nominar .contenedor-instrucciones .instruccion .contenedor-botones-nominar .btn-subir {
+  width: 175px;
+  height: 50px;
+  background: url("../svg/boton-subir.svg") no-repeat;
+  background-position: center;
+}
+/* line 390, ../sass/screen.scss */
+.contenedor-nominar .contenedor-instrucciones .instruccion .contenedor-botones-nominar .btn-enviar {
+  width: 175px;
+  height: 50px;
+  background: url("../svg/boton-enviar.svg") no-repeat;
+  background-position: center;
+}
+/* line 397, ../sass/screen.scss */
+.contenedor-nominar .contenedor-instrucciones .instruccion textarea {
+  width: 100%;
+  display: block;
+  margin-bottom: 40px;
+  background: url("../svg/bg-borde-textarea.svg") no-repeat;
+  background-position: center bottom;
+  letter-spacing: 1px;
+}
+
+/**/
+/*VOTAR*/
+/* line 411, ../sass/screen.scss */
+.contenedor-votar {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  left: 20px;
+}
+/* line 417, ../sass/screen.scss */
+.contenedor-votar h1 {
+  width: 100%;
+  display: block;
+  align-self: center;
+  margin-bottom: 100px;
+}
+/* line 423, ../sass/screen.scss */
+.contenedor-votar .contenedor-participantes {
+  height: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  left: 20px;
+  overflow-y: scroll;
+}
+/* line 433, ../sass/screen.scss */
+.contenedor-votar .contenedor-participantes .participante {
+  width: 16%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 20px;
+  overflow: hidden;
+}
+/* line 441, ../sass/screen.scss */
+.contenedor-votar .contenedor-participantes .participante .nombre {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  background: #92101D;
+  text-align: center;
+  font-family: "Futura Std Heavy";
+  font-size: 24px;
+  color: #FFF;
+}
+/* line 453, ../sass/screen.scss */
+.contenedor-votar .contenedor-participantes .participante input[type=radio].btn-votar {
+  width: 50px;
+  height: 50px;
+  align-self: center;
+  margin: 10px 0;
+  background: url("../svg/boton-like.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/* line 462, ../sass/screen.scss */
+.contenedor-votar .contenedor-participantes .participante input[type=radio].btn-votar:checked {
+  background: url("../svg/boton-voto.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/* line 469, ../sass/screen.scss */
+.contenedor-votar .contenedor-participantes .participante:nth-child(1),
+.contenedor-votar .contenedor-participantes .participante:nth-child(7),
+.contenedor-votar .contenedor-participantes .participante:nth-child(13) {
+  background: url("../svg/bg-participante-01.svg") no-repeat;
+  background-size: cover;
+}
+/* line 475, ../sass/screen.scss */
+.contenedor-votar .contenedor-participantes .participante:nth-child(2),
+.contenedor-votar .contenedor-participantes .participante:nth-child(8),
+.contenedor-votar .contenedor-participantes .participante:nth-child(14) {
+  background: url("../svg/bg-participante-02.svg") no-repeat;
+  background-size: cover;
+}
+/* line 481, ../sass/screen.scss */
+.contenedor-votar .contenedor-participantes .participante:nth-child(3),
+.contenedor-votar .contenedor-participantes .participante:nth-child(9),
+.contenedor-votar .contenedor-participantes .participante:nth-child(15) {
+  background: url("../svg/bg-participante-03.svg") no-repeat;
+  background-size: cover;
+}
+/* line 487, ../sass/screen.scss */
+.contenedor-votar .contenedor-participantes .participante:nth-child(4),
+.contenedor-votar .contenedor-participantes .participante:nth-child(10),
+.contenedor-votar .contenedor-participantes .participante:nth-child(16) {
+  background: url("../svg/bg-participante-04.svg") no-repeat;
+  background-size: cover;
+}
+/* line 493, ../sass/screen.scss */
+.contenedor-votar .contenedor-participantes .participante:nth-child(5),
+.contenedor-votar .contenedor-participantes .participante:nth-child(11),
+.contenedor-votar .contenedor-participantes .participante:nth-child(17) {
+  background: url("../svg/bg-participante-05.svg") no-repeat;
+  background-size: cover;
+}
+/* line 499, ../sass/screen.scss */
+.contenedor-votar .contenedor-participantes .participante:nth-child(6),
+.contenedor-votar .contenedor-participantes .participante:nth-child(12),
+.contenedor-votar .contenedor-participantes .participante:nth-child(18) {
+  background: url("../svg/bg-participante-06.svg") no-repeat;
+  background-size: cover;
+}
+
+/**/
+/*DESAFIAR*/
+/* line 510, ../sass/screen.scss */
+.contenedor-desafiar {
+  height: 100%;
+  background: #FFF url("../svg/bg-desafiar.svg") no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  left: 20px;
+}
+
+/**/
+/*FOOTER*/
+/* line 523, ../sass/screen.scss */
+footer {
+  width: 100%;
+  padding: 0 40px;
+  background: #000;
+  position: fixed;
+  bottom: 0;
+  z-index: 30;
+  color: #FFF;
+}
+
+/* line 532, ../sass/screen.scss */
+.contenedor-footer-izq {
+  width: 100%;
+  height: 200px;
+  display: inline-flex;
+}
+/* line 536, ../sass/screen.scss */
+.contenedor-footer-izq .contenedor-volantin,
+.contenedor-footer-izq .contenedor-digala {
+  width: 50%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  color: #FFF;
+}
+/* line 543, ../sass/screen.scss */
+.contenedor-footer-izq .contenedor-volantin img,
+.contenedor-footer-izq .contenedor-digala img {
+  width: 50px;
+  height: 50px;
+  align-self: center;
+  margin-right: 15px;
+}
+/* line 549, ../sass/screen.scss */
+.contenedor-footer-izq .contenedor-volantin ul,
+.contenedor-footer-izq .contenedor-digala ul {
+  align-self: center;
+}
+/* line 552, ../sass/screen.scss */
+.contenedor-footer-izq .contenedor-volantin ul li h2,
+.contenedor-footer-izq .contenedor-digala ul li h2 {
+  font-size: 26px;
+}
+/* line 558, ../sass/screen.scss */
+.contenedor-footer-izq .contenedor-volantin:hover {
+  color: #E25E50;
+}
+/* line 561, ../sass/screen.scss */
+.contenedor-footer-izq .contenedor-digala:hover {
+  color: #F0C700;
+}
+
+/* line 565, ../sass/screen.scss */
+.contenedor-footer-der {
+  width: 100%;
+  height: 200px;
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+/* line 571, ../sass/screen.scss */
+.contenedor-footer-der .btn-nominar {
+  width: 175px;
+  height: 50px;
+  align-self: center;
+  background: url("../svg/boton-nominar.svg") no-repeat;
+  background-position: center;
+}
+/* line 578, ../sass/screen.scss */
+.contenedor-footer-der .btn-votar {
+  width: 175px;
+  height: 50px;
+  align-self: center;
+  background: url("../svg/boton-votar.svg") no-repeat;
+  background-position: center;
+}
+
+/* line 586, ../sass/screen.scss */
+.contenedor-volver {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+/* line 592, ../sass/screen.scss */
+.contenedor-volver .btn-volver {
+  width: 175px;
+  height: 50px;
+  align-self: center;
+  background: url("../svg/boton-volver.svg") no-repeat;
+  background-position: center;
+}
+
+/**/
+@media screen and (max-width: 1920px) {
+  /* line 604, ../sass/screen.scss */
+  main .contenedor {
+    height: calc(100% - 400px);
+  }
+
+  /* line 613, ../sass/screen.scss */
+  .contenedor-footer-izq .contenedor-volantin ul li h2,
+  .contenedor-footer-izq .contenedor-digala ul li h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 1680px) {
+  /* line 623, ../sass/screen.scss */
+  header .logo {
+    width: 150px;
+  }
+}
+@media screen and (max-width: 1600px) {
+  /* line 629, ../sass/screen.scss */
+  h1 {
+    font-size: 30px;
+  }
+
+  /* line 632, ../sass/screen.scss */
+  p {
+    font-size: 16px;
+  }
+
+  /* line 636, ../sass/screen.scss */
+  main .contenedor {
+    height: calc(100% - 350px);
+    bottom: 150px;
+  }
+
+  /* line 644, ../sass/screen.scss */
+  .modal .modal-content .modal-body .logo-modal {
+    width: 150px;
+  }
+  /* line 647, ../sass/screen.scss */
+  .modal .modal-content .modal-body .corona-modal {
+    width: 100px;
+    margin: 40px 0;
+  }
+  /* line 652, ../sass/screen.scss */
+  .modal .modal-content .modal-body .texto-nominacion p {
+    font-size: 30px;
+  }
+
+  /* line 661, ../sass/screen.scss */
+  .logo-home img,
+  .contenedor-reyes img {
+    max-width: 350px;
+  }
+
+  /* line 669, ../sass/screen.scss */
+  .contenedor-nominar .contenedor-instrucciones .instruccion .contenedor-botones-nominar .btn-examinar,
+  .contenedor-nominar .contenedor-instrucciones .instruccion .contenedor-botones-nominar .btn-subir,
+  .contenedor-nominar .contenedor-instrucciones .instruccion .contenedor-botones-nominar .btn-enviar {
+    width: 150px;
+    height: 30px;
+  }
+
+  /* line 679, ../sass/screen.scss */
+  .contenedor-footer-izq,
+  .contenedor-footer-der {
+    height: 150px;
+  }
+
+  /* line 686, ../sass/screen.scss */
+  .contenedor-footer-izq .contenedor-volantin img,
+  .contenedor-footer-izq .contenedor-digala img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  /* line 693, ../sass/screen.scss */
+  .contenedor-footer-izq .contenedor-volantin ul li h2,
+  .contenedor-footer-izq .contenedor-digala ul li h2 {
+    font-size: 20px;
+  }
+  /* line 696, ../sass/screen.scss */
+  .contenedor-footer-izq .contenedor-volantin ul li p,
+  .contenedor-footer-izq .contenedor-digala ul li p {
+    font-size: 14px;
+  }
+
+  /* line 704, ../sass/screen.scss */
+  .contenedor-footer-der .btn-nominar,
+  .contenedor-footer-der .btn-votar {
+    width: 150px;
+    height: 30px;
+  }
+
+  /* line 710, ../sass/screen.scss */
+  .contenedor-volver {
+    height: 150px;
+  }
+  /* line 712, ../sass/screen.scss */
+  .contenedor-volver .btn-volver {
+    width: 150px;
+    height: 30px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  /* line 721, ../sass/screen.scss */
+  .contenedor-votar .contenedor-participantes .participante {
+    padding: 10px;
+  }
+  /* line 723, ../sass/screen.scss */
+  .contenedor-votar .contenedor-participantes .participante .nombre {
+    font-size: 14px;
+  }
+  /* line 726, ../sass/screen.scss */
+  .contenedor-votar .contenedor-participantes .participante input[type=radio].btn-votar {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media screen and (max-width: 1366px) {
+  /* line 736, ../sass/screen.scss */
+  header .logo {
+    width: 100px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  /* line 744, ../sass/screen.scss */
+  .logo-home img,
+  .contenedor-reyes img {
+    max-width: 300px;
+  }
+
+  /* line 749, ../sass/screen.scss */
+  .contenedor-reyes p {
+    padding-top: 40px;
+  }
+
+  /* line 755, ../sass/screen.scss */
+  .contenedor-votar .contenedor-participantes .participante {
+    width: 33.3%;
+  }
+
+  /* line 763, ../sass/screen.scss */
+  .contenedor-footer-izq .contenedor-volantin img,
+  .contenedor-footer-izq .contenedor-digala img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  /* line 770, ../sass/screen.scss */
+  .contenedor-footer-izq .contenedor-volantin ul li h2,
+  .contenedor-footer-izq .contenedor-digala ul li h2 {
+    font-size: 12px;
+  }
+  /* line 773, ../sass/screen.scss */
+  .contenedor-footer-izq .contenedor-volantin ul li p,
+  .contenedor-footer-izq .contenedor-digala ul li p {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 991px) {
+  /* line 782, ../sass/screen.scss */
+  .borde-arriba,
+  .borde-derecha,
+  .borde-abajo,
+  .borde-izquierda {
+    display: none;
+  }
+
+  /* line 791, ../sass/screen.scss */
+  .contenedor-nominar .contenedor-instrucciones .instruccion .contenedor-botones-nominar {
+    width: 100%;
+  }
+  /* line 793, ../sass/screen.scss */
+  .contenedor-nominar .contenedor-instrucciones .instruccion .contenedor-botones-nominar .btn-examinar,
+  .contenedor-nominar .contenedor-instrucciones .instruccion .contenedor-botones-nominar .btn-subir,
+  .contenedor-nominar .contenedor-instrucciones .instruccion .contenedor-botones-nominar .btn-enviar {
+    width: 100px;
+  }
+
+  /* line 802, ../sass/screen.scss */
+  .contenedor-footer-izq,
+  .contenedor-footer-der {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  /* line 808, ../sass/screen.scss */
+  .contenedor-footer-izq .contenedor-volantin,
+  .contenedor-footer-izq .contenedor-digala {
+    width: 100%;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+  }
+  /* line 813, ../sass/screen.scss */
+  .contenedor-footer-izq .contenedor-volantin img,
+  .contenedor-footer-izq .contenedor-digala img {
+    width: 30px;
+    height: 30px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  /* line 820, ../sass/screen.scss */
+  .contenedor-footer-izq .contenedor-volantin ul li,
+  .contenedor-footer-izq .contenedor-digala ul li {
+    text-align: center;
+  }
+  /* line 822, ../sass/screen.scss */
+  .contenedor-footer-izq .contenedor-volantin ul li h2,
+  .contenedor-footer-izq .contenedor-digala ul li h2 {
+    font-size: 12px;
+  }
+  /* line 825, ../sass/screen.scss */
+  .contenedor-footer-izq .contenedor-volantin ul li p,
+  .contenedor-footer-izq .contenedor-digala ul li p {
+    font-size: 12px;
+  }
+
+  /* line 833, ../sass/screen.scss */
+  .contenedor-footer-der .btn-nominar,
+  .contenedor-footer-der .btn-votar {
+    width: 100px;
+  }
+
+  /* line 838, ../sass/screen.scss */
+  .contenedor-volver {
+    height: auto;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  /* line 842, ../sass/screen.scss */
+  .contenedor-volver .btn-volver {
+    width: 100px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  /* line 848, ../sass/screen.scss */
+  h1 {
+    font-size: 22px;
+  }
+
+  /* line 851, ../sass/screen.scss */
+  p {
+    font-size: 12px;
+  }
+
+  /* line 854, ../sass/screen.scss */
+  body {
+    overflow: auto;
+  }
+
+  /* line 857, ../sass/screen.scss */
+  .icono-izq {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    line-height: 20px;
+  }
+
+  /* line 863, ../sass/screen.scss */
+  .icono-der {
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+    line-height: 20px;
+  }
+
+  /* line 869, ../sass/screen.scss */
+  header {
+    min-height: 50px;
+    background-position: right -5px;
+  }
+  /* line 872, ../sass/screen.scss */
+  header .logo {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  /* line 878, ../sass/screen.scss */
+  main .contenedor {
+    height: 100%;
+    position: relative;
+    bottom: 0;
+  }
+
+  /* line 884, ../sass/screen.scss */
+  .logo-home {
+    width: 100%;
+    margin: 20px 0;
+    position: inherit;
+    left: inherit;
+  }
+  /* line 889, ../sass/screen.scss */
+  .logo-home img {
+    max-width: 100px;
+  }
+
+  /* line 893, ../sass/screen.scss */
+  .contenedor-reyes {
+    width: 100%;
+    position: relative;
+    right: inherit;
+  }
+  /* line 897, ../sass/screen.scss */
+  .contenedor-reyes img {
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+  /* line 901, ../sass/screen.scss */
+  .contenedor-reyes p {
+    width: 100%;
+    padding: 40px 0;
+  }
+
+  /* line 906, ../sass/screen.scss */
+  .contenedor-nominar {
+    position: relative;
+    right: 0;
+    left: 0;
+  }
+  /* line 910, ../sass/screen.scss */
+  .contenedor-nominar h1 {
+    margin-bottom: 20px;
+  }
+  /* line 913, ../sass/screen.scss */
+  .contenedor-nominar .contenedor-instrucciones {
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    left: 0;
+  }
+  /* line 918, ../sass/screen.scss */
+  .contenedor-nominar .contenedor-instrucciones span,
+  .contenedor-nominar .contenedor-instrucciones p {
+    display: inline;
+  }
+  /* line 923, ../sass/screen.scss */
+  .contenedor-nominar .contenedor-instrucciones .instruccion .texto-instruccion {
+    margin-bottom: 20px;
+  }
+  /* line 926, ../sass/screen.scss */
+  .contenedor-nominar .contenedor-instrucciones .instruccion textarea {
+    margin-bottom: 20px;
+  }
+  /* line 930, ../sass/screen.scss */
+  .contenedor-nominar .contenedor-instrucciones .instruccion:nth-child(2) {
+    margin-top: 20px;
+  }
+
+  /* line 937, ../sass/screen.scss */
+  .modal .modal-content .modal-header {
+    min-height: 50px;
+  }
+  /* line 941, ../sass/screen.scss */
+  .modal .modal-content .modal-body .logo-modal {
+    width: 100px;
+  }
+  /* line 944, ../sass/screen.scss */
+  .modal .modal-content .modal-body h1 {
+    margin: 20px;
+    font-size: 20px;
+  }
+  /* line 948, ../sass/screen.scss */
+  .modal .modal-content .modal-body .corona-modal {
+    width: 50px;
+    margin: 20px;
+  }
+  /* line 953, ../sass/screen.scss */
+  .modal .modal-content .modal-body .texto-nominacion p {
+    line-height: 30px;
+    font-size: 20px;
+  }
+  /* line 959, ../sass/screen.scss */
+  .modal .modal-content .modal-body form textarea {
+    height: 100px;
+  }
+
+  /* line 966, ../sass/screen.scss */
+  .contenedor-votar {
+    position: relative;
+    right: 0;
+    left: 0;
+  }
+  /* line 970, ../sass/screen.scss */
+  .contenedor-votar .contenedor-participantes {
+    height: 95%;
+    padding: 20px;
+    position: relative;
+    right: 0;
+    left: 0;
+  }
+  /* line 976, ../sass/screen.scss */
+  .contenedor-votar .contenedor-participantes .participante {
+    width: 100%;
+  }
+
+  /* line 981, ../sass/screen.scss */
+  .contenedor-desafiar {
+    position: relative;
+    right: 0;
+    left: 0;
+  }
+
+  /* line 986, ../sass/screen.scss */
+  footer {
+    padding: 20px;
+    position: relative;
+  }
+
+  /* line 990, ../sass/screen.scss */
+  .footer-fijo {
+    position: fixed;
+  }
+}

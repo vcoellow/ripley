@@ -1,0 +1,1380 @@
+@charset "UTF-8";
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/*FUENTES*/
+@font-face {
+  font-family: "Futura Std Heavy";
+  src: url("../fonts/FuturaStd-HeavyOblique.ttf");
+  src: url("../fonts/FuturaStd-HeavyOblique.woff2") format("woff2"), url("../fonts/FuturaStd-HeavyOblique.woff") format("woff"), url("../fonts/FuturaStd-HeavyOblique.svg#filename") format("svg");
+}
+@font-face {
+  font-family: "Glyphicons Halflings";
+  src: url("../fonts/glyphicons-halflings-regular.ttf");
+  src: url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.svg#filename") format("svg");
+}
+/**/
+/*COLORES*/
+/**/
+/*GENÉRICOS*/
+/* line 36, ../sass/screen.scss */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  -webkit-appearance: none;
+}
+
+/* line 42, ../sass/screen.scss */
+*:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* line 47, ../sass/screen.scss */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #FFF;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+}
+
+/* line 56, ../sass/screen.scss */
+ul,
+li {
+  list-style: none;
+}
+
+/* line 60, ../sass/screen.scss */
+a {
+  transition: .3s ease-in-out;
+}
+
+/* line 63, ../sass/screen.scss */
+a:hover,
+a:focus {
+  text-decoration: none;
+  cursor: pointer;
+  transition: .3s ease-in;
+}
+
+/* line 69, ../sass/screen.scss */
+textarea {
+  resize: none;
+}
+
+/* line 72, ../sass/screen.scss */
+button {
+  cursor: pointer;
+}
+
+/* line 75, ../sass/screen.scss */
+img {
+  width: 100%;
+  vertical-align: top;
+}
+
+/* line 79, ../sass/screen.scss */
+.franja-full-blanco {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 100px 0;
+}
+
+/* line 86, ../sass/screen.scss */
+table {
+  width: 100%;
+  font-family: Tahoma, sans-serif;
+}
+/* line 89, ../sass/screen.scss */
+table thead {
+  width: 100%;
+  display: inline-table;
+}
+/* line 92, ../sass/screen.scss */
+table thead tr {
+  width: 100%;
+}
+/* line 96, ../sass/screen.scss */
+table tbody {
+  width: 100%;
+  display: inline-table;
+}
+/* line 99, ../sass/screen.scss */
+table tbody tr {
+  width: 100%;
+}
+
+/**/
+/*HEADER*/
+/* line 107, ../sass/screen.scss */
+header {
+  width: 100%;
+  background: #000;
+}
+/* line 110, ../sass/screen.scss */
+header .logo {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  margin-right: 20px;
+}
+/* line 115, ../sass/screen.scss */
+header .logo img {
+  width: 30px;
+}
+/* line 120, ../sass/screen.scss */
+header .input-group .btn {
+  background: #FFF url("../svg/icono-lupa.svg") center no-repeat;
+  background-size: 15px 15px;
+  border: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 15px;
+}
+/* line 129, ../sass/screen.scss */
+header .input-group .dropdown-menu {
+  width: 100%;
+  min-width: 490px !important;
+  padding: 30px;
+  border-radius: 0;
+}
+/* line 134, ../sass/screen.scss */
+header .input-group .dropdown-menu .form-group {
+  width: 100%;
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+/* line 141, ../sass/screen.scss */
+header .input-group .dropdown-menu .form-group label {
+  width: 40%;
+  font-size: 12px;
+}
+/* line 145, ../sass/screen.scss */
+header .input-group .dropdown-menu .form-group .form-control {
+  border: 1px solid #C8C8C8 !important;
+  border-radius: 0;
+  font-size: 12px;
+}
+/* line 150, ../sass/screen.scss */
+header .input-group .dropdown-menu .form-group select.form-control:not([size]):not([multiple]) {
+  height: inherit;
+  padding: 0 10px;
+}
+/* line 156, ../sass/screen.scss */
+header .input-group input {
+  width: 100%;
+  border: none;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  color: #000;
+}
+/* line 163, ../sass/screen.scss */
+header .input-group ::-webkit-input-placeholder {
+  color: #000;
+}
+/* line 166, ../sass/screen.scss */
+header .input-group .dropdown-toggle:after {
+  display: none;
+}
+/* line 170, ../sass/screen.scss */
+header .logged {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFF;
+}
+/* line 177, ../sass/screen.scss */
+header .logged span {
+  display: inline-flex;
+}
+/* line 180, ../sass/screen.scss */
+header .logged img {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  border-radius: 50%;
+}
+/* line 186, ../sass/screen.scss */
+header .logged .dropdown {
+  width: 15px;
+  height: 15px;
+  background: #000 url("../images/bg-boton-usuario.png") center no-repeat;
+  background-size: contain;
+}
+/* line 191, ../sass/screen.scss */
+header .logged .dropdown button {
+  width: 15px;
+  height: 15px;
+  background: transparent;
+}
+/* line 196, ../sass/screen.scss */
+header .logged .dropdown .dropdown-menu {
+  width: 300px;
+  margin-top: 15px;
+  padding: 0;
+}
+/* line 200, ../sass/screen.scss */
+header .logged .dropdown .dropdown-menu .perfil {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 15px;
+  background: #E5E5E5;
+}
+/* line 207, ../sass/screen.scss */
+header .logged .dropdown .dropdown-menu .perfil .foto {
+  margin-right: 30px;
+  border-radius: 50%;
+}
+/* line 210, ../sass/screen.scss */
+header .logged .dropdown .dropdown-menu .perfil .foto img {
+  width: 70px;
+  height: 70px;
+}
+/* line 216, ../sass/screen.scss */
+header .logged .dropdown .dropdown-menu .cuenta {
+  display: block;
+  padding: 10px 15px;
+}
+/* line 220, ../sass/screen.scss */
+header .logged .dropdown .dropdown-menu ul {
+  background: #E5E5E5;
+}
+/* line 222, ../sass/screen.scss */
+header .logged .dropdown .dropdown-menu ul li {
+  padding: 10px 30px;
+}
+/* line 224, ../sass/screen.scss */
+header .logged .dropdown .dropdown-menu ul li a {
+  font-size: 12px;
+  color: #000;
+}
+/* line 228, ../sass/screen.scss */
+header .logged .dropdown .dropdown-menu ul li a:hover {
+  color: #F5C908;
+}
+/* line 232, ../sass/screen.scss */
+header .logged .dropdown .dropdown-menu ul li.cerrar-sesion {
+  display: none;
+}
+/* line 238, ../sass/screen.scss */
+header .logged a {
+  color: #FFF;
+}
+/* line 241, ../sass/screen.scss */
+header .logged a:hover {
+  color: #F5C908;
+}
+/* line 245, ../sass/screen.scss */
+header .borde-header {
+  width: 100%;
+  height: 50px;
+  display: block;
+  background: #000 url("../images/borde-header.png") no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+/**/
+/*USUARIO*/
+/* line 257, ../sass/screen.scss */
+.contenedor-usuario {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  background: #F0F0F0 url("../images/bg-contenedor-usuario.png") no-repeat;
+  background-position: center top;
+  background-size: contain;
+  text-align: center;
+}
+/* line 267, ../sass/screen.scss */
+.contenedor-usuario .usuario {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+/* line 272, ../sass/screen.scss */
+.contenedor-usuario .usuario .foto-usuario {
+  width: 130px;
+  height: 130px;
+  margin-bottom: 15px;
+  background: #E33D6D;
+}
+/* line 278, ../sass/screen.scss */
+.contenedor-usuario .usuario span {
+  margin: 10px 0;
+}
+/* line 281, ../sass/screen.scss */
+.contenedor-usuario .usuario .nombre {
+  font-size: 24px;
+}
+/* line 284, ../sass/screen.scss */
+.contenedor-usuario .usuario .puesto {
+  font-size: 16px;
+}
+/* line 287, ../sass/screen.scss */
+.contenedor-usuario .usuario .jefatura {
+  font-size: 12px;
+}
+/* line 290, ../sass/screen.scss */
+.contenedor-usuario .usuario a {
+  display: inline-flex;
+  padding: 20px 100px;
+  background: #E6275E;
+  font-size: 16px;
+  color: #FFF;
+}
+/* line 297, ../sass/screen.scss */
+.contenedor-usuario .usuario a:hover {
+  background: #C8C8C8;
+  color: #E6275E;
+}
+
+/* line 304, ../sass/screen.scss */
+.panel .panel-heading {
+  padding: 15px 10px;
+  border: 1px solid #C8C8C8;
+}
+/* line 308, ../sass/screen.scss */
+.panel .panel-heading h2 a {
+  font-size: 16px;
+  color: #000;
+}
+/* line 313, ../sass/screen.scss */
+.panel .panel-heading .accordion-toggle:after {
+  float: right;
+  content: "\e079";
+  font-family: 'Glyphicons Halflings';
+}
+/* line 319, ../sass/screen.scss */
+.panel .panel-body {
+  padding: 15px 10px;
+}
+/* line 322, ../sass/screen.scss */
+.panel .panel-body ul li {
+  line-height: 30px;
+}
+
+/* line 328, ../sass/screen.scss */
+.panel:nth-child(2) {
+  margin: 15px 0;
+}
+
+/**/
+/*PORCENTAJES*/
+/* line 334, ../sass/screen.scss */
+.franja-full-gris {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 100px 0;
+  background: #474747;
+}
+
+/* line 343, ../sass/screen.scss */
+.contenedor-porcentaje h2 {
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFF;
+}
+
+/* line 405, ../sass/screen.scss */
+.chart-one {
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  position: relative;
+}
+/* line 411, ../sass/screen.scss */
+.chart-one.animate svg .circle-foreground {
+  animation: offset 3s ease-in-out forwards;
+  animation-delay: 1s;
+}
+/* line 415, ../sass/screen.scss */
+.chart-one.animate figcaption:after {
+  animation: chart-one-label 3s steps(55) forwards;
+  animation-delay: 1s;
+}
+/* line 420, ../sass/screen.scss */
+.chart-one svg {
+  width: 100%;
+  height: 100%;
+}
+/* line 423, ../sass/screen.scss */
+.chart-one svg .circle-background, .chart-one svg .circle-foreground {
+  r: 70px;
+  cx: 50%;
+  cy: 50%;
+  fill: none;
+  stroke: rgba(207, 9, 44, 0.5);
+  stroke-width: 10px;
+}
+/* line 431, ../sass/screen.scss */
+.chart-one svg .circle-foreground {
+  stroke: #CF092C;
+  stroke-dasharray: 241.78px 439.6px;
+  stroke-dashoffset: 241.78px;
+  stroke-linecap: round;
+  transform-origin: 50% 50%;
+  transform: rotate(-90deg);
+}
+/* line 441, ../sass/screen.scss */
+.chart-one figcaption {
+  width: 100%;
+  height: 42px;
+  display: inline-block;
+  position: absolute;
+  top: calc(50% - 21px);
+  left: 0;
+  overflow: hidden;
+  text-align: center;
+  font-family: "Futura Std Heavy";
+  font-style: italic;
+  font-size: 0;
+  color: #FFF;
+}
+/* line 454, ../sass/screen.scss */
+.chart-one figcaption:after {
+  display: inline-block;
+  content: "0%\a 1%\a 2%\a 3%\a 4%\a 5%\a 6%\a 7%\a 8%\a 9%\a 10%\a 11%\a 12%\a 13%\a 14%\a 15%\a 16%\a 17%\a 18%\a 19%\a 20%\a 21%\a 22%\a 23%\a 24%\a 25%\a 26%\a 27%\a 28%\a 29%\a 30%\a 31%\a 32%\a 33%\a 34%\a 35%\a 36%\a 37%\a 38%\a 39%\a 40%\a 41%\a 42%\a 43%\a 44%\a 45%\a 46%\a 47%\a 48%\a 49%\a 50%\a 51%\a 52%\a 53%\a 54%\a 55%\a 56%\a 57%\a 58%\a 59%\a 60%\a 61%\a 62%\a 63%\a 64%\a 65%\a 66%\a 67%\a 68%\a 69%\a 70%\a 71%\a 72%\a 73%\a 74%\a 75%\a 76%\a 77%\a 78%\a 79%\a 80%\a 81%\a 82%\a 83%\a 84%\a 85%\a 86%\a 87%\a 88%\a 89%\a 90%\a 91%\a 92%\a 93%\a 94%\a 95%\a 96%\a 97%\a 98%\a 99%\a 100%\a";
+  line-height: 42px;
+  font-size: 42px;
+  white-space: pre;
+}
+
+@keyframes chart-one-label {
+  100% {
+    transform: translateY(-2310px);
+  }
+}
+/* line 405, ../sass/screen.scss */
+.chart-two {
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  position: relative;
+}
+/* line 411, ../sass/screen.scss */
+.chart-two.animate svg .circle-foreground {
+  animation: offset 3s ease-in-out forwards;
+  animation-delay: 1s;
+}
+/* line 415, ../sass/screen.scss */
+.chart-two.animate figcaption:after {
+  animation: chart-two-label 3s steps(80) forwards;
+  animation-delay: 1s;
+}
+/* line 420, ../sass/screen.scss */
+.chart-two svg {
+  width: 100%;
+  height: 100%;
+}
+/* line 423, ../sass/screen.scss */
+.chart-two svg .circle-background, .chart-two svg .circle-foreground {
+  r: 70px;
+  cx: 50%;
+  cy: 50%;
+  fill: none;
+  stroke: rgba(245, 201, 8, 0.5);
+  stroke-width: 10px;
+}
+/* line 431, ../sass/screen.scss */
+.chart-two svg .circle-foreground {
+  stroke: #F5C908;
+  stroke-dasharray: 351.68px 439.6px;
+  stroke-dashoffset: 351.68px;
+  stroke-linecap: round;
+  transform-origin: 50% 50%;
+  transform: rotate(-90deg);
+}
+/* line 441, ../sass/screen.scss */
+.chart-two figcaption {
+  width: 100%;
+  height: 42px;
+  display: inline-block;
+  position: absolute;
+  top: calc(50% - 21px);
+  left: 0;
+  overflow: hidden;
+  text-align: center;
+  font-family: "Futura Std Heavy";
+  font-style: italic;
+  font-size: 0;
+  color: #FFF;
+}
+/* line 454, ../sass/screen.scss */
+.chart-two figcaption:after {
+  display: inline-block;
+  content: "0%\a 1%\a 2%\a 3%\a 4%\a 5%\a 6%\a 7%\a 8%\a 9%\a 10%\a 11%\a 12%\a 13%\a 14%\a 15%\a 16%\a 17%\a 18%\a 19%\a 20%\a 21%\a 22%\a 23%\a 24%\a 25%\a 26%\a 27%\a 28%\a 29%\a 30%\a 31%\a 32%\a 33%\a 34%\a 35%\a 36%\a 37%\a 38%\a 39%\a 40%\a 41%\a 42%\a 43%\a 44%\a 45%\a 46%\a 47%\a 48%\a 49%\a 50%\a 51%\a 52%\a 53%\a 54%\a 55%\a 56%\a 57%\a 58%\a 59%\a 60%\a 61%\a 62%\a 63%\a 64%\a 65%\a 66%\a 67%\a 68%\a 69%\a 70%\a 71%\a 72%\a 73%\a 74%\a 75%\a 76%\a 77%\a 78%\a 79%\a 80%\a 81%\a 82%\a 83%\a 84%\a 85%\a 86%\a 87%\a 88%\a 89%\a 90%\a 91%\a 92%\a 93%\a 94%\a 95%\a 96%\a 97%\a 98%\a 99%\a 100%\a";
+  line-height: 42px;
+  font-size: 42px;
+  white-space: pre;
+}
+
+@keyframes chart-two-label {
+  100% {
+    transform: translateY(-3360px);
+  }
+}
+/* line 405, ../sass/screen.scss */
+.chart-three {
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  position: relative;
+}
+/* line 411, ../sass/screen.scss */
+.chart-three.animate svg .circle-foreground {
+  animation: offset 3s ease-in-out forwards;
+  animation-delay: 1s;
+}
+/* line 415, ../sass/screen.scss */
+.chart-three.animate figcaption:after {
+  animation: chart-three-label 3s steps(70) forwards;
+  animation-delay: 1s;
+}
+/* line 420, ../sass/screen.scss */
+.chart-three svg {
+  width: 100%;
+  height: 100%;
+}
+/* line 423, ../sass/screen.scss */
+.chart-three svg .circle-background, .chart-three svg .circle-foreground {
+  r: 70px;
+  cx: 50%;
+  cy: 50%;
+  fill: none;
+  stroke: rgba(104, 36, 102, 0.5);
+  stroke-width: 10px;
+}
+/* line 431, ../sass/screen.scss */
+.chart-three svg .circle-foreground {
+  stroke: #682466;
+  stroke-dasharray: 307.72px 439.6px;
+  stroke-dashoffset: 307.72px;
+  stroke-linecap: round;
+  transform-origin: 50% 50%;
+  transform: rotate(-90deg);
+}
+/* line 441, ../sass/screen.scss */
+.chart-three figcaption {
+  width: 100%;
+  height: 42px;
+  display: inline-block;
+  position: absolute;
+  top: calc(50% - 21px);
+  left: 0;
+  overflow: hidden;
+  text-align: center;
+  font-family: "Futura Std Heavy";
+  font-style: italic;
+  font-size: 0;
+  color: #FFF;
+}
+/* line 454, ../sass/screen.scss */
+.chart-three figcaption:after {
+  display: inline-block;
+  content: "0%\a 1%\a 2%\a 3%\a 4%\a 5%\a 6%\a 7%\a 8%\a 9%\a 10%\a 11%\a 12%\a 13%\a 14%\a 15%\a 16%\a 17%\a 18%\a 19%\a 20%\a 21%\a 22%\a 23%\a 24%\a 25%\a 26%\a 27%\a 28%\a 29%\a 30%\a 31%\a 32%\a 33%\a 34%\a 35%\a 36%\a 37%\a 38%\a 39%\a 40%\a 41%\a 42%\a 43%\a 44%\a 45%\a 46%\a 47%\a 48%\a 49%\a 50%\a 51%\a 52%\a 53%\a 54%\a 55%\a 56%\a 57%\a 58%\a 59%\a 60%\a 61%\a 62%\a 63%\a 64%\a 65%\a 66%\a 67%\a 68%\a 69%\a 70%\a 71%\a 72%\a 73%\a 74%\a 75%\a 76%\a 77%\a 78%\a 79%\a 80%\a 81%\a 82%\a 83%\a 84%\a 85%\a 86%\a 87%\a 88%\a 89%\a 90%\a 91%\a 92%\a 93%\a 94%\a 95%\a 96%\a 97%\a 98%\a 99%\a 100%\a";
+  line-height: 42px;
+  font-size: 42px;
+  white-space: pre;
+}
+
+@keyframes chart-three-label {
+  100% {
+    transform: translateY(-2940px);
+  }
+}
+/* line 405, ../sass/screen.scss */
+.chart-four {
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  position: relative;
+}
+/* line 411, ../sass/screen.scss */
+.chart-four.animate svg .circle-foreground {
+  animation: offset 3s ease-in-out forwards;
+  animation-delay: 1s;
+}
+/* line 415, ../sass/screen.scss */
+.chart-four.animate figcaption:after {
+  animation: chart-four-label 3s steps(60) forwards;
+  animation-delay: 1s;
+}
+/* line 420, ../sass/screen.scss */
+.chart-four svg {
+  width: 100%;
+  height: 100%;
+}
+/* line 423, ../sass/screen.scss */
+.chart-four svg .circle-background, .chart-four svg .circle-foreground {
+  r: 70px;
+  cx: 50%;
+  cy: 50%;
+  fill: none;
+  stroke: rgba(231, 61, 81, 0.5);
+  stroke-width: 10px;
+}
+/* line 431, ../sass/screen.scss */
+.chart-four svg .circle-foreground {
+  stroke: #E73D51;
+  stroke-dasharray: 263.76px 439.6px;
+  stroke-dashoffset: 263.76px;
+  stroke-linecap: round;
+  transform-origin: 50% 50%;
+  transform: rotate(-90deg);
+}
+/* line 441, ../sass/screen.scss */
+.chart-four figcaption {
+  width: 100%;
+  height: 42px;
+  display: inline-block;
+  position: absolute;
+  top: calc(50% - 21px);
+  left: 0;
+  overflow: hidden;
+  text-align: center;
+  font-family: "Futura Std Heavy";
+  font-style: italic;
+  font-size: 0;
+  color: #FFF;
+}
+/* line 454, ../sass/screen.scss */
+.chart-four figcaption:after {
+  display: inline-block;
+  content: "0%\a 1%\a 2%\a 3%\a 4%\a 5%\a 6%\a 7%\a 8%\a 9%\a 10%\a 11%\a 12%\a 13%\a 14%\a 15%\a 16%\a 17%\a 18%\a 19%\a 20%\a 21%\a 22%\a 23%\a 24%\a 25%\a 26%\a 27%\a 28%\a 29%\a 30%\a 31%\a 32%\a 33%\a 34%\a 35%\a 36%\a 37%\a 38%\a 39%\a 40%\a 41%\a 42%\a 43%\a 44%\a 45%\a 46%\a 47%\a 48%\a 49%\a 50%\a 51%\a 52%\a 53%\a 54%\a 55%\a 56%\a 57%\a 58%\a 59%\a 60%\a 61%\a 62%\a 63%\a 64%\a 65%\a 66%\a 67%\a 68%\a 69%\a 70%\a 71%\a 72%\a 73%\a 74%\a 75%\a 76%\a 77%\a 78%\a 79%\a 80%\a 81%\a 82%\a 83%\a 84%\a 85%\a 86%\a 87%\a 88%\a 89%\a 90%\a 91%\a 92%\a 93%\a 94%\a 95%\a 96%\a 97%\a 98%\a 99%\a 100%\a";
+  line-height: 42px;
+  font-size: 42px;
+  white-space: pre;
+}
+
+@keyframes chart-four-label {
+  100% {
+    transform: translateY(-2520px);
+  }
+}
+@keyframes offset {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+/* line 478, ../sass/screen.scss */
+.chart-one:hover,
+.chart-two:hover,
+.chart-three:hover,
+.chart-four:hover {
+  cursor: pointer;
+}
+
+/**/
+/*PORCENTAJES*/
+/* line 485, ../sass/screen.scss */
+.titulo {
+  width: 100%;
+  display: block;
+  margin-bottom: 50px;
+  padding-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  font-family: Tahoma, sans-serif;
+  font-size: 24px;
+}
+
+/* line 496, ../sass/screen.scss */
+.titulo:before {
+  width: 50%;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+}
+
+/* line 505, ../sass/screen.scss */
+.descargar-informe {
+  width: 100%;
+  display: inline-block;
+  margin: 25px 0;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 10px;
+  color: #FFF;
+}
+
+/* line 514, ../sass/screen.scss */
+.recursos {
+  padding: 30px 15px;
+  border: 1px solid #959595;
+  line-height: 15px;
+  font-size: 10px;
+}
+
+/* line 521, ../sass/screen.scss */
+.adn .titulo:before {
+  border-top: 5px solid #CF092C;
+}
+/* line 524, ../sass/screen.scss */
+.adn table {
+  font-size: 10px;
+}
+/* line 527, ../sass/screen.scss */
+.adn table thead tr {
+  background: #FFF;
+  border: 1px solid #535353;
+}
+/* line 530, ../sass/screen.scss */
+.adn table thead tr th {
+  width: 20%;
+  border: 0;
+  text-align: center;
+}
+/* line 535, ../sass/screen.scss */
+.adn table thead tr th:nth-child(1) {
+  text-align: left;
+}
+/* line 542, ../sass/screen.scss */
+.adn table tbody tr th {
+  width: 20%;
+  text-align: left;
+}
+/* line 546, ../sass/screen.scss */
+.adn table tbody tr td {
+  width: 20%;
+  text-align: center;
+}
+/* line 553, ../sass/screen.scss */
+.adn .descargar-informe {
+  background: #CF092C;
+}
+/* line 556, ../sass/screen.scss */
+.adn .descargar-informe:hover {
+  background: #C8C8C8;
+  color: #CF092C;
+}
+
+/* line 562, ../sass/screen.scss */
+.kpi .titulo:before {
+  border-top: 5px solid #F5C908;
+}
+/* line 565, ../sass/screen.scss */
+.kpi table {
+  font-size: 10px;
+}
+/* line 568, ../sass/screen.scss */
+.kpi table thead tr {
+  background: #959595;
+}
+/* line 570, ../sass/screen.scss */
+.kpi table thead tr th {
+  width: 50%;
+  border: 0;
+  text-align: center;
+  color: #FFF;
+}
+/* line 580, ../sass/screen.scss */
+.kpi table tbody tr th {
+  width: 50%;
+  text-align: left;
+}
+/* line 584, ../sass/screen.scss */
+.kpi table tbody tr td {
+  width: 50%;
+  text-align: center;
+}
+
+/* line 593, ../sass/screen.scss */
+.clima .titulo:before {
+  border-top: 5px solid #682466;
+}
+/* line 596, ../sass/screen.scss */
+.clima table {
+  font-size: 10px;
+}
+/* line 599, ../sass/screen.scss */
+.clima table thead tr {
+  background: #FFF;
+  border: 1px solid #959595;
+}
+/* line 602, ../sass/screen.scss */
+.clima table thead tr th {
+  width: 20%;
+  border: 0;
+  text-align: center;
+}
+/* line 608, ../sass/screen.scss */
+.clima table thead tr:nth-child(2) {
+  background: #959595;
+  border: 1px solid #959595;
+  color: #FFF;
+}
+/* line 616, ../sass/screen.scss */
+.clima table tbody tr th {
+  width: 20%;
+  text-align: left;
+}
+/* line 620, ../sass/screen.scss */
+.clima table tbody tr td {
+  width: 20%;
+  text-align: center;
+}
+/* line 627, ../sass/screen.scss */
+.clima .descargar-informe {
+  background: #682466;
+}
+/* line 630, ../sass/screen.scss */
+.clima .descargar-informe:hover {
+  background: #C8C8C8;
+  color: #682466;
+}
+
+/* line 636, ../sass/screen.scss */
+.ed .titulo:before {
+  border-top: 5px solid #E73D51;
+}
+/* line 639, ../sass/screen.scss */
+.ed table {
+  font-size: 10px;
+}
+/* line 642, ../sass/screen.scss */
+.ed table thead tr {
+  background: #959595;
+}
+/* line 644, ../sass/screen.scss */
+.ed table thead tr th {
+  width: 50%;
+  border: 0;
+  text-align: center;
+  color: #FFF;
+}
+/* line 654, ../sass/screen.scss */
+.ed table tbody tr th {
+  width: 50%;
+  text-align: left;
+}
+/* line 658, ../sass/screen.scss */
+.ed table tbody tr td {
+  width: 50%;
+  text-align: center;
+}
+/* line 668, ../sass/screen.scss */
+.ed table:nth-child(2) thead tr th {
+  width: 25%;
+}
+/* line 675, ../sass/screen.scss */
+.ed table:nth-child(2) tbody tr th {
+  width: 25%;
+}
+/* line 678, ../sass/screen.scss */
+.ed table:nth-child(2) tbody tr td {
+  width: 25%;
+}
+/* line 684, ../sass/screen.scss */
+.ed .descargar-informe {
+  background: #E73D51;
+}
+
+/**/
+/*INFORMACIÓN DE TALENTO*/
+/* line 691, ../sass/screen.scss */
+.franja-full-amarillo {
+  padding: 30px 0;
+  background: #F5C908;
+  text-align: center;
+}
+/* line 695, ../sass/screen.scss */
+.franja-full-amarillo h1 {
+  font-size: 20px;
+}
+
+/* line 699, ../sass/screen.scss */
+.franja-informacion-talento {
+  padding: 50px 0;
+  background: url("../images/bg-informacion-talento.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/* line 704, ../sass/screen.scss */
+.franja-informacion-talento .contenedor-circulos {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+/* line 709, ../sass/screen.scss */
+.franja-informacion-talento .contenedor-circulos .circulo-cargo {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  background: #FFF;
+  border-radius: 50%;
+}
+/* line 716, ../sass/screen.scss */
+.franja-informacion-talento .contenedor-circulos .circulo-cargo:nth-child(1) {
+  background: #CF092C;
+}
+/* line 719, ../sass/screen.scss */
+.franja-informacion-talento .contenedor-circulos .circulo-cargo:nth-child(2) {
+  margin: 0 5px;
+  background: #F5C908;
+}
+/* line 723, ../sass/screen.scss */
+.franja-informacion-talento .contenedor-circulos .circulo-cargo:nth-child(3) {
+  background: #00FF3C;
+}
+/* line 727, ../sass/screen.scss */
+.franja-informacion-talento table {
+  border: 1px solid #FFF;
+}
+/* line 731, ../sass/screen.scss */
+.franja-informacion-talento table tbody tr th {
+  width: 50%;
+  padding: 10px 5px;
+  border: none;
+  color: #FFF;
+}
+/* line 737, ../sass/screen.scss */
+.franja-informacion-talento table tbody tr td {
+  width: 50%;
+  padding: 10px 0;
+  border: none;
+  text-align: center;
+  color: #FFF;
+}
+/* line 745, ../sass/screen.scss */
+.franja-informacion-talento table tbody tr:nth-child(2) {
+  background: rgba(255, 255, 255, 0.3);
+}
+/* line 750, ../sass/screen.scss */
+.franja-informacion-talento table.potencial-sucesor {
+  border: 1px solid #FFF;
+}
+/* line 754, ../sass/screen.scss */
+.franja-informacion-talento table.potencial-sucesor thead tr th {
+  width: 33.3%;
+  border: none;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #FFF;
+}
+/* line 763, ../sass/screen.scss */
+.franja-informacion-talento table.potencial-sucesor thead tr:nth-child(1) {
+  background: #FFF;
+  text-align: center;
+}
+/* line 766, ../sass/screen.scss */
+.franja-informacion-talento table.potencial-sucesor thead tr:nth-child(1) th {
+  color: #682466;
+}
+/* line 773, ../sass/screen.scss */
+.franja-informacion-talento table.potencial-sucesor tbody tr td {
+  width: 33.3%;
+  padding: 10px 0;
+  border: none;
+  color: #FFF;
+}
+/* line 780, ../sass/screen.scss */
+.franja-informacion-talento table.potencial-sucesor tbody tr:nth-child(even) {
+  background: transparent;
+}
+/* line 783, ../sass/screen.scss */
+.franja-informacion-talento table.potencial-sucesor tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.3);
+}
+/* line 788, ../sass/screen.scss */
+.franja-informacion-talento h2 {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #FFF;
+}
+/* line 793, ../sass/screen.scss */
+.franja-informacion-talento .circulo {
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin: 0 auto;
+  background: #F5C908;
+  border-radius: 50%;
+}
+/* line 801, ../sass/screen.scss */
+.franja-informacion-talento canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/**/
+/*MI EQUIPO*/
+/* line 809, ../sass/screen.scss */
+.franja-full-rosado {
+  padding: 30px 0;
+  background: #E73D51;
+  text-align: center;
+}
+/* line 813, ../sass/screen.scss */
+.franja-full-rosado h1 {
+  font-size: 20px;
+  color: #FFF;
+}
+
+/* line 821, ../sass/screen.scss */
+.mi-equipo table thead tr {
+  background: #FFF;
+  border: 1px solid #CFCFCF;
+}
+/* line 824, ../sass/screen.scss */
+.mi-equipo table thead tr th {
+  width: 20%;
+  border: 0;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 16px;
+}
+/* line 831, ../sass/screen.scss */
+.mi-equipo table thead tr th:nth-child(1),
+.mi-equipo table thead tr th:nth-child(2) {
+  text-align: left;
+}
+/* line 836, ../sass/screen.scss */
+.mi-equipo table thead tr th:nth-child(1) img {
+  width: 50px;
+  height: 50px;
+}
+/* line 844, ../sass/screen.scss */
+.mi-equipo table tbody tr {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  background: #FFF !important;
+}
+/* line 849, ../sass/screen.scss */
+.mi-equipo table tbody tr td {
+  width: 20%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+/* line 856, ../sass/screen.scss */
+.mi-equipo table tbody tr td a {
+  color: #0062A0;
+}
+/* line 859, ../sass/screen.scss */
+.mi-equipo table tbody tr td a:hover {
+  color: #E73D51;
+}
+/* line 862, ../sass/screen.scss */
+.mi-equipo table tbody tr td .cargo {
+  display: block;
+  font-size: 10px;
+}
+/* line 868, ../sass/screen.scss */
+.mi-equipo table tbody tr td:nth-child(1) img {
+  width: 50px;
+  height: 50px;
+}
+/* line 873, ../sass/screen.scss */
+.mi-equipo table tbody tr td:nth-child(1),
+.mi-equipo table tbody tr td:nth-child(2) {
+  align-items: flex-start;
+}
+/* line 878, ../sass/screen.scss */
+.mi-equipo table tbody tr:hover {
+  cursor: pointer;
+}
+
+/* line 884, ../sass/screen.scss */
+td.hiddenRow {
+  width: 100% !important;
+}
+/* line 886, ../sass/screen.scss */
+td.hiddenRow .accordion-body {
+  width: 100%;
+}
+/* line 888, ../sass/screen.scss */
+td.hiddenRow .accordion-body td {
+  border: none;
+  font-size: 12px;
+}
+/* line 893, ../sass/screen.scss */
+td.hiddenRow .descargar-informe-equipo {
+  width: 85%;
+  display: inline-block;
+  padding: 10px 0;
+  background: #C8C8C8;
+  text-align: center;
+  font-size: 12px;
+  color: #000;
+}
+/* line 902, ../sass/screen.scss */
+td.hiddenRow .descargar-informe-equipo:hover {
+  background: #E73D51;
+  color: #FFF;
+}
+
+/* line 907, ../sass/screen.scss */
+.modal-header {
+  justify-content: flex-end;
+  border: 0;
+}
+
+/* line 911, ../sass/screen.scss */
+.modal-body.reporte {
+  height: 100%;
+}
+/* line 913, ../sass/screen.scss */
+.modal-body.reporte table {
+  font-size: 14px;
+}
+/* line 916, ../sass/screen.scss */
+.modal-body.reporte table thead tr {
+  background: #BFBFBF;
+}
+/* line 918, ../sass/screen.scss */
+.modal-body.reporte table thead tr th {
+  width: 33.3%;
+  padding: 10px 0;
+  border: 0;
+  text-align: center;
+  font-size: 14px;
+  color: #FFF;
+}
+/* line 930, ../sass/screen.scss */
+.modal-body.reporte table tbody tr th {
+  width: 33.3%;
+  padding: 10px 0;
+  text-align: left;
+}
+/* line 934, ../sass/screen.scss */
+.modal-body.reporte table tbody tr th .cargo {
+  display: block;
+  font-size: 10px;
+}
+/* line 939, ../sass/screen.scss */
+.modal-body.reporte table tbody tr td {
+  width: 33.3%;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* line 948, ../sass/screen.scss */
+.modal-body.antecedentes {
+  height: 100%;
+}
+/* line 950, ../sass/screen.scss */
+.modal-body.antecedentes table {
+  font-size: 10px;
+}
+/* line 953, ../sass/screen.scss */
+.modal-body.antecedentes table thead tr {
+  background: #BFBFBF;
+}
+/* line 955, ../sass/screen.scss */
+.modal-body.antecedentes table thead tr th {
+  width: 100%;
+  padding: 10px 0;
+  border: 0;
+  text-align: center;
+  font-size: 14px;
+  color: #FFF;
+}
+/* line 967, ../sass/screen.scss */
+.modal-body.antecedentes table tbody tr th {
+  width: 30%;
+  padding: 10px 0;
+  text-align: left;
+}
+/* line 972, ../sass/screen.scss */
+.modal-body.antecedentes table tbody tr td {
+  width: 70%;
+  padding: 10px 0;
+  text-align: center;
+}
+/* line 976, ../sass/screen.scss */
+.modal-body.antecedentes table tbody tr td canvas {
+  width: 300px !important;
+  height: auto !important;
+}
+/* line 980, ../sass/screen.scss */
+.modal-body.antecedentes table tbody tr td .potencial,
+.modal-body.antecedentes table tbody tr td .talento {
+  display: block;
+  margin-bottom: 15px;
+  text-align: left;
+  font-size: 14px;
+}
+/* line 987, ../sass/screen.scss */
+.modal-body.antecedentes table tbody tr td .circulo {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background: #F5C908;
+  border-radius: 50%;
+}
+
+/**/
+/*FOOTER*/
+/* line 1002, ../sass/screen.scss */
+footer {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 50px 0;
+  background: #474747;
+}
+/* line 1010, ../sass/screen.scss */
+footer .logo img {
+  width: 50px;
+}
+
+/**/
+@media screen and (max-width: 1200px) {
+  /* line 1020, ../sass/screen.scss */
+  header .input-group .dropdown-menu {
+    min-width: 300px !important;
+    padding: 15px;
+  }
+}
+@media screen and (max-width: 991px) {
+  /* line 1030, ../sass/screen.scss */
+  header .logged span.bienvenido,
+  header .logged a.cerrar-sesion {
+    display: none;
+  }
+  /* line 1037, ../sass/screen.scss */
+  header .logged .dropdown .dropdown-menu ul li.cerrar-sesion {
+    display: block;
+  }
+
+  /* line 1045, ../sass/screen.scss */
+  .contenedor-usuario {
+    margin-bottom: 30px;
+  }
+
+  /* line 1048, ../sass/screen.scss */
+  .chart-one,
+  .chart-two,
+  .chart-three,
+  .chart-four {
+    width: 130px;
+    height: 130px;
+  }
+  /* line 1055, ../sass/screen.scss */
+  .chart-one svg .circle-background, .chart-one svg .circle-foreground,
+  .chart-one svg .circle-foreground,
+  .chart-two svg .circle-background,
+  .chart-two svg .circle-foreground,
+  .chart-two svg .circle-foreground,
+  .chart-three svg .circle-background,
+  .chart-three svg .circle-foreground,
+  .chart-three svg .circle-foreground,
+  .chart-four svg .circle-background,
+  .chart-four svg .circle-foreground,
+  .chart-four svg .circle-foreground {
+    r: 50px;
+    stroke-width: 5px;
+  }
+  /* line 1061, ../sass/screen.scss */
+  .chart-one figcaption:after,
+  .chart-two figcaption:after,
+  .chart-three figcaption:after,
+  .chart-four figcaption:after {
+    font-size: 30px;
+  }
+
+  /* line 1068, ../sass/screen.scss */
+  .table thead th,
+  .table tbody th {
+    vertical-align: middle;
+  }
+}
